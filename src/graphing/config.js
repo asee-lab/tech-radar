@@ -2,7 +2,14 @@ const quadrantSize = 512
 const quadrantGap = 32
 
 const getQuadrants = () => {
-  return JSON.parse(process.env.QUADRANTS || null) || ['Techniques', 'Platforms', 'Tools', 'Languages & Frameworks']
+  const quadrants = JSON.parse(process.env.QUADRANTS || null) || [
+    'Techniques',
+    'Platforms',
+    'Tools',
+    'Languages & Frameworks',
+  ]
+  console.log('🎯 Configured quadrants:', quadrants)
+  return quadrants
 }
 
 const getRings = () => {

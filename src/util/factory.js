@@ -91,7 +91,22 @@ function validateInputQuadrantOrRingName(allQuadrantsOrRings, quadrantOrRing) {
   const quadrantOrRingNames = Object.keys(allQuadrantsOrRings)
   const regexToFixLanguagesAndFrameworks = /(-|\s+)(and)(-|\s+)|\s*(&)\s*/g
   const formattedInputQuadrant = quadrantOrRing.toLowerCase().replace(regexToFixLanguagesAndFrameworks, ' & ')
-  return quadrantOrRingNames.find((quadrantOrRing) => quadrantOrRing.toLowerCase() === formattedInputQuadrant)
+
+  // DEBUG: Show the normalization process
+  console.log('🔍 Matching:', {
+    input: quadrantOrRing,
+    normalized: formattedInputQuadrant,
+    available: quadrantOrRingNames,
+    availableNormalized: quadrantOrRingNames.map((q) =>
+      q.toLowerCase().replace(regexToFixLanguagesAndFrameworks, ' & '),
+    ),
+  })
+
+  // FIX: Apply the same normalization to the configured names
+  return quadrantOrRingNames.find(
+    (quadrantOrRing) =>
+      quadrantOrRing.toLowerCase().replace(regexToFixLanguagesAndFrameworks, ' & ') === formattedInputQuadrant,
+  )
 }
 
 const plotRadarGraph = function (title, blips, currentRadarName, alternativeRadars) {
@@ -112,6 +127,15 @@ const plotRadarGraph = function (title, blips, currentRadarName, alternativeRada
   blips.forEach((blip) => {
     const currentQuadrant = validateInputQuadrantOrRingName(quadrants, blip.quadrant)
     const ring = validateInputQuadrantOrRingName(ringMap, blip.ring)
+
+    // DEBUG: Log matching results
+    if (!currentQuadrant) {
+      console.log('⚠️ Failed to match quadrant:', blip.quadrant, 'Available:', Object.keys(quadrants))
+    }
+    if (!ring) {
+      console.log('⚠️ Failed to match ring:', blip.ring, 'Available:', Object.keys(ringMap))
+    }
+
     if (currentQuadrant && ring) {
       const blipObj = new Blip(
         blip.name,

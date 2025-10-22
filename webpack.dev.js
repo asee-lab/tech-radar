@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 const cssnano = require('cssnano')
+const path = require('path')
 
 const common = require('./webpack.common.js')
 const config = require('./src/config')
@@ -70,5 +71,13 @@ module.exports = merge(common, {
       'process.env.ENVIRONMENT': JSON.stringify('development'),
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'files'),
+      publicPath: '/files',
+    },
+    port: 8080,
+    open: process.env.AUTO_LOAD_CSV ? `/?sheetId=http://localhost:8080/files/${process.env.AUTO_LOAD_CSV}` : true,
+  },
   devtool: 'source-map',
 })
