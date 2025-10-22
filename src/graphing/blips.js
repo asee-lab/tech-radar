@@ -328,7 +328,7 @@ function createGroupBlip(blipsInRing, blipType, ring, quadrantOrder) {
   return groupBlip
 }
 
-function plotGroupBlips(ringBlips, ring, quadrantOrder, parentElement, quadrantWrapper, tooltip) {
+function plotGroupBlips(ringBlips, ring, quadrantOrder, parentElement, quadrantWrapper, tooltip, quadrants) {
   let newBlipsInRing = [],
     existingBlipsInRing = []
   ringBlips.forEach((blip) => {
@@ -344,15 +344,15 @@ function plotGroupBlips(ringBlips, ring, quadrantOrder, parentElement, quadrantW
     const baseCoords = groupBlipsBaseCoords(ringIndex)[blipType]
     const blipCoordsForCurrentQuadrant = transposeQuadrantCoords(baseCoords, groupBlip.groupBlipWidth())[quadrantOrder]
     drawBlipInCoordinates(groupBlip, blipCoordsForCurrentQuadrant, quadrantOrder, parentElement)
-    renderBlipDescription(groupBlip, ring, quadrantWrapper, tooltip, groupBlipTooltipText)
+    renderBlipDescription(groupBlip, ring, quadrantWrapper, tooltip, groupBlipTooltipText, quadrants)
     blipsInRing.forEach(function (blip) {
       blip.setGroupIdInGraph(groupBlip.id())
-      renderBlipDescription(blip, ring, quadrantWrapper, tooltip)
+      renderBlipDescription(blip, ring, quadrantWrapper, tooltip, null, quadrants)
     })
   })
 }
 
-const plotRadarBlips = function (parentElement, rings, quadrantWrapper, tooltip) {
+const plotRadarBlips = function (parentElement, rings, quadrantWrapper, tooltip, quadrants) {
   let blips, quadrant, startAngle, quadrantOrder
 
   quadrant = quadrantWrapper.quadrant
@@ -375,7 +375,7 @@ const plotRadarBlips = function (parentElement, rings, quadrantWrapper, tooltip)
     let allBlipCoordsInRing = []
 
     if (ringBlips.length > graphConfig.maxBlipsInRings[i]) {
-      plotGroupBlips(ringBlips, ring, quadrantOrder, parentElement, quadrantWrapper, tooltip)
+      plotGroupBlips(ringBlips, ring, quadrantOrder, parentElement, quadrantWrapper, tooltip, quadrants)
       return
     }
 
@@ -398,7 +398,7 @@ const plotRadarBlips = function (parentElement, rings, quadrantWrapper, tooltip)
     // Draw blips using sorted coordinates
     allBlipCoordsInRing.forEach(function (blipCoords, i) {
       drawBlipInCoordinates(ringBlips[i], blipCoords.coordinates, quadrantOrder, parentElement)
-      renderBlipDescription(ringBlips[i], ring, quadrantWrapper, tooltip)
+      renderBlipDescription(ringBlips[i], ring, quadrantWrapper, tooltip, null, quadrants)
     })
   })
 }

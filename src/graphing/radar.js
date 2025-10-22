@@ -5,6 +5,7 @@ const _ = require('lodash/core')
 
 const RingCalculator = require('../util/ringCalculator')
 const AutoComplete = require('../util/autoComplete')
+const { setupInternalLinks } = require('../util/internalLinks')
 const config = require('../config')
 const featureToggles = config().featureToggles
 const { plotRadarBlips } = require('./blips')
@@ -298,7 +299,7 @@ const Radar = function (size, radar) {
         const coordinates = findBlipCoordinates(blip, minRadius, maxRadius, startAngle, allBlipCoordinatesInRing, order)
 
         allBlipCoordinatesInRing.push(coordinates)
-        drawBlipInCoordinates(blip, coordinates, order, quadrantGroup, ringList)
+        drawBlipInCoordinates(blip, coordinates, order, quadrantGroup, ringList, radar.quadrants())
       })
     })
   }
@@ -327,7 +328,7 @@ const Radar = function (size, radar) {
     }
   }
 
-  function drawBlipInCoordinates(blip, coordinates, order, quadrantGroup, ringList) {
+  function drawBlipInCoordinates(blip, coordinates, order, quadrantGroup, ringList, quadrants) {
     var x = coordinates[0]
     var y = coordinates[1]
 
@@ -365,6 +366,11 @@ const Radar = function (size, radar) {
       .attr('class', 'blip-item-description')
     if (blip.description()) {
       blipItemDescription.append('p').html(blip.description())
+      // Set up internal links in the description
+      const descriptionElement = document.getElementById('blip-description-' + blip.id())
+      if (descriptionElement && quadrants) {
+        setupInternalLinks(descriptionElement, quadrants)
+      }
     }
 
     var mouseOver = function () {
@@ -816,7 +822,7 @@ const Radar = function (size, radar) {
         plotLines(quadrantGroup, quadrant)
         const ringTextGroup = quadrantGroup.append('g')
         plotRingNames(ringTextGroup, rings, quadrant)
-        plotRadarBlips(quadrantGroup, rings, quadrant, tip)
+        plotRadarBlips(quadrantGroup, rings, quadrant, tip, quadrants)
         renderMobileView(quadrant)
         addQuadrantNameInPdfView(quadrant.order, quadrant.quadrant.name())
       } else {

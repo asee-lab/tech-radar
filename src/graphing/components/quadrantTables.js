@@ -2,6 +2,7 @@ const d3 = require('d3')
 const { graphConfig, getScale, uiConfig } = require('../config')
 const { stickQuadrantOnScroll } = require('./quadrants')
 const { removeAllSpaces } = require('../../util/stringUtil')
+const { setupInternalLinks } = require('../../util/internalLinks')
 
 function fadeOutAllBlips() {
   d3.selectAll('g > a.blip-link').attr('opacity', 0.3)
@@ -21,7 +22,7 @@ function highlightBlipInGraph(blipIdToFocus) {
   fadeInSelectedBlip(selectedBlipOnGraph)
 }
 
-function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText) {
+function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, quadrants) {
   let blipTableItem = d3.select(`.quadrant-table.${quadrant.order} ul[data-ring-order='${ring.order()}']`)
   if (!groupBlipTooltipText) {
     blipTableItem = blipTableItem.append('li').classed('blip-list__item', true)
@@ -68,6 +69,14 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText) 
       .classed('blip-list__item-container__description', true)
       .attr('id', `blip-description-${blip.id()}`)
       .html(blip.description())
+
+    // Set up internal links in the description
+    if (blip.description() && quadrants) {
+      const descriptionElement = document.getElementById(`blip-description-${blip.id()}`)
+      if (descriptionElement) {
+        setupInternalLinks(descriptionElement, quadrants)
+      }
+    }
   }
   const blipGraphItem = d3.select(`g a#blip-link-${removeAllSpaces(blip.id())}`)
   const mouseOver = function (e) {

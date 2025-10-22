@@ -112,7 +112,7 @@ function selectRadarQuadrant(order, startAngle, name) {
     .style('left', 'unset')
     .style('right', 0)
     .style('transform', `translate(${quadrantGroupTranslate[order].x}px, ${quadrantGroupTranslate[order].y}px)`)
-    .attr('transform', `translate(${quadrantGroupTranslate[order].x}px, ${quadrantGroupTranslate[order].y}px)`)
+    .attr('transform', `translate(${quadrantGroupTranslate[order].x}, ${quadrantGroupTranslate[order].y})`)
 
   d3.selectAll('.quadrant-group-' + order + ' .blip-link text').each(function () {
     d3.select(this.parentNode).transition().duration(ANIMATION_DURATION)
