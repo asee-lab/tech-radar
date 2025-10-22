@@ -11,6 +11,7 @@ function renderButtons(radarFooter) {
     .append('a')
     .classed('buttons__flamingo-btn', true)
     .attr('href', window.location.href.substring(0, window.location.href.indexOf(window.location.search)))
+    .style('display', 'none')
     .text('Generate new Radar')
 }
 
