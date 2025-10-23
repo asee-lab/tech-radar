@@ -9,6 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet" />
+    <script>
+      // Auto-load default radar CSV on GitHub Pages
+      (function() {
+        const isGitHubPages = window.location.hostname.includes('github.io') || 
+                             window.location.hostname.includes('asee.io');
+        const hasNoQuery = !window.location.search;
+        const isRootPath = window.location.pathname === '/' || 
+                          window.location.pathname.endsWith('/tech-radar/') ||
+                          window.location.pathname.endsWith('/tech-radar');
+        
+        if (isGitHubPages && hasNoQuery && isRootPath) {
+          const baseUrl = window.location.origin + window.location.pathname;
+          const csvUrl = baseUrl + (baseUrl.endsWith('/') ? '' : '/') + 'files/radar-2025.10.csv';
+          window.location.href = '?sheetId=' + encodeURIComponent(csvUrl);
+        }
+      })();
+    </script>
   </head>
 
   <body>

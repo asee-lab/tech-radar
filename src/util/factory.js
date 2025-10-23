@@ -318,9 +318,9 @@ const FileName = function (url) {
   var search = /([^\\/]+)$/
   var match = search.exec(decodeURIComponent(url.replace(/\+/g, ' ')))
   if (match != null) {
-    return match[1]
+    return match[1].replace(/-/g, ' ')
   }
-  return url
+  return url.replace(/-/g, ' ')
 }
 
 const Factory = function () {
