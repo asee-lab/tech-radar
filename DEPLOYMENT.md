@@ -22,7 +22,7 @@ This will:
 1. Build the production bundle with custom quadrant names baked in
 2. Copy your CSV file to the dist directory
 3. Deploy to the `gh-pages` branch
-4. Your radar will be live at `https://asee-lab.github.io/tech-radar/`
+4. Your radar will be live at `https://radar.asee.dev`
 
 ### Method 2: Manual Deployment
 
@@ -78,7 +78,7 @@ Add this to your `src/index.html` inside the `<head>` section:
 
 Share the complete URL with query parameters:
 ```
-https://asee-lab.github.io/tech-radar/?sheetId=https://asee-lab.github.io/tech-radar/files/radar-2025.10.csv
+https://radar.asee.dev/?sheetId=https://radar.asee.dev/files/radar-2025.10.csv
 ```
 
 ## GitHub Pages Setup
@@ -86,11 +86,10 @@ https://asee-lab.github.io/tech-radar/?sheetId=https://asee-lab.github.io/tech-r
 1. Go to your GitHub repository settings
 2. Navigate to **Pages** section
 3. Set source to `gh-pages` branch
-4. Click Save
+4. Configure custom domain: `radar.asee.dev`
+5. Click Save
 
-The site will be available at: `https://<username>.github.io/<repo-name>/`
-
-For this repo: `https://asee-lab.github.io/tech-radar/`
+The site will be available at: `https://radar.asee.dev`
 
 ## Updating the Radar
 

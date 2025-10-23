@@ -90,10 +90,7 @@ Same as tech-radar:
 
 ### Before Custom Domain is Set Up
 
-Your radar is available at:
-```
-https://asee-lab.github.io/tech-radar/
-```
+Your radar would be available at the GitHub Pages default URL.
 
 ### After Custom Domain is Set Up
 
@@ -137,15 +134,14 @@ https://engineering.asee.io/tech-radar/
 3. Wait 24 hours for DNS propagation
 4. Check GitHub Pages settings show "DNS check successful"
 
-## Alternative: Using Only GitHub.io Domain
-
-If you don't want to set up a custom domain yet, you can still use:
-
-```
-https://asee-lab.github.io/tech-radar/
-```
-
 No additional configuration needed - just deploy!
+
+## Note on Deployment Configuration
+
+This repository is configured to use the custom domain `radar.asee.dev` exclusively. The deployment script has been configured with:
+- `ASSET_PATH="/"` for root-level deployment
+- CNAME file automatically copied to enable custom domain
+- All asset paths configured for custom domain usage
 
 ## Security Notes
 

@@ -3,8 +3,8 @@ set -e
 
 echo "🚀 Deploying Tech Radar to GitHub Pages..."
 
-# Set the base path for GitHub Pages (repository name)
-export ASSET_PATH="/tech-radar/"
+# Set the base path for custom domain (root path)
+export ASSET_PATH="/"
 
 # Set environment variables for the build
 export QUADRANTS='["Patterns and Practices","Runtime Infrastructure","Tools","Frameworks and libraries"]'
@@ -19,6 +19,10 @@ echo "📄 Copying CSV file to dist..."
 mkdir -p dist/files
 cp files/radar-2025.10.csv dist/files/
 cp files/README.md dist/files/ 2>/dev/null || true
+
+# Copy CNAME file for custom domain
+echo "📝 Copying CNAME file for custom domain..."
+cp CNAME dist/
 
 # Create .nojekyll file to prevent GitHub Pages from ignoring files starting with underscore
 echo "📝 Creating .nojekyll file..."
@@ -35,4 +39,4 @@ else
 fi
 
 echo "✅ Deployment complete!"
-echo "Your radar will be available at: https://asee-lab.github.io/tech-radar/"
+echo "Your radar will be available at: https://radar.asee.dev"
