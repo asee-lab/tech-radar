@@ -2,6 +2,7 @@ const d3 = require('d3')
 
 const AutoComplete = require('../../util/autoComplete')
 const { selectRadarQuadrant, removeScrollListener } = require('../components/quadrants')
+const appState = require('../../util/appState')
 
 function renderSearch(radarHeader, quadrants) {
   const searchContainer = radarHeader.append('div').classed('search-container', true)
@@ -13,8 +14,22 @@ function renderSearch(radarHeader, quadrants) {
     .attr('id', 'auto-complete')
 
   AutoComplete('#auto-complete', quadrants, function (e, ui) {
-    const blipId = ui.item.blip.id()
-    const quadrant = ui.item.quadrant
+    const item = ui.item
+
+    if (appState.isManifestMode() && item.versionId) {
+      const { navigateToBlipDetail } = require('../blipDetail')
+      navigateToBlipDetail(item.blipName, item.versionId)
+      return
+    }
+
+    if (appState.isManifestMode() && item.blip) {
+      const { navigateToBlipDetail } = require('../blipDetail')
+      navigateToBlipDetail(item.blip.name(), appState.getCurrentVersionId())
+      return
+    }
+
+    const blipId = item.blip.id()
+    const quadrant = item.quadrant
 
     selectRadarQuadrant(quadrant.order, quadrant.startAngle, quadrant.quadrant.name())
     const blipElement = d3.select(

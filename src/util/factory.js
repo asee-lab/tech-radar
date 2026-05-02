@@ -21,7 +21,9 @@ const ExceptionMessages = require('./exceptionMessages')
 const GoogleAuth = require('./googleAuth')
 const config = require('../config')
 const featureToggles = config().featureToggles
-const { getDocumentOrSheetId, getSheetName } = require('./urlUtils')
+const { getDocumentOrSheetId, getSheetName, getVersion, getBlipParam, constructVersionUrl } = require('./urlUtils')
+const appState = require('./appState')
+const { renderBlipDetail, showRadarView } = require('../graphing/blipDetail')
 const { getGraphSize, graphConfig, isValidConfig } = require('../graphing/config')
 const InvalidConfigError = require('../exceptions/invalidConfigError')
 const InvalidContentError = require('../exceptions/invalidContentError')
@@ -308,6 +310,153 @@ const JSONFile = function (url) {
   return self
 }
 
+const RING_ORDER = { adopt: 0, trial: 1, assess: 2, hold: 3 }
+
+function deriveStatus(currentRing, priorRing) {
+  if (priorRing == null) return 'new'
+  const curr = RING_ORDER[currentRing]
+  const prior = RING_ORDER[priorRing]
+  if (curr === prior) return 'no change'
+  if (curr < prior) return 'moved in'
+  return 'moved out'
+}
+
+const ManifestDocument = function (manifestUrl) {
+  const self = {}
+
+  self.build = function () {
+    d3.json(manifestUrl)
+      .then((manifest) => {
+        if (!manifest || !Array.isArray(manifest.versions) || !manifest.versions.length) {
+          throw new Error('manifest.json is missing `versions`')
+        }
+        const baseDir = manifestUrl.replace(/[^/]*$/, '')
+        return Promise.all(
+          manifest.versions.map((v) =>
+            d3.csv(baseDir + v.file).then((rows) => ({ version: v, rows })),
+          ),
+        ).then((loaded) => ({ manifest, loaded }))
+      })
+      .then(({ manifest, loaded }) => {
+        const versions = new Map()
+        loaded.forEach(({ version, rows }) => {
+          const columnNames = rows.columns
+          delete rows.columns
+          try {
+            const contentValidator = new ContentValidator(columnNames)
+            contentValidator.verifyContent()
+            contentValidator.verifyHeaders()
+          } catch (e) {
+            console.warn(`Validation warning for ${version.file}:`, e.message)
+          }
+          const sanitized = _.map(rows, (row) => {
+            if (row.status === undefined) row.status = ''
+            if (row.isNew === undefined) row.isNew = 'FALSE'
+            return new InputSanitizer().sanitize(row)
+          })
+          versions.set(version.id, { ...version, blips: sanitized })
+        })
+
+        const orderedIds = manifest.versions.map((v) => v.id)
+        const ringLookup = new Map()
+        for (let i = orderedIds.length - 1; i >= 0; i--) {
+          const id = orderedIds[i]
+          const entry = versions.get(id)
+          const priorId = i + 1 < orderedIds.length ? orderedIds[i + 1] : null
+          const priorRings = priorId ? ringLookup.get(priorId) : null
+          const currentRings = new Map()
+          entry.blips.forEach((blip) => {
+            const nameLower = blip.name.toLowerCase()
+            const ring = (blip.ring || '').toLowerCase()
+            currentRings.set(nameLower, ring)
+            if (!blip.status || !blip.status.trim()) {
+              const priorRing = priorRings ? priorRings.get(nameLower) : undefined
+              blip.status = deriveStatus(ring, priorRing)
+            }
+          })
+          ringLookup.set(id, currentRings)
+        }
+
+        const blipHistory = new Map()
+        orderedIds.forEach((id) => {
+          const entry = versions.get(id)
+          entry.blips.forEach((blip) => {
+            const key = blip.name.toLowerCase()
+            if (!blipHistory.has(key)) blipHistory.set(key, [])
+            blipHistory.get(key).push({
+              versionId: id,
+              name: blip.name,
+              ring: (blip.ring || '').toLowerCase(),
+              quadrant: blip.quadrant,
+              description: blip.description,
+              status: blip.status,
+              isNew: (blip.isNew || '').toLowerCase() === 'true',
+            })
+          })
+        })
+
+        const currentVersionId = getVersion() || manifest.current || orderedIds[0]
+        appState.setManifestData({ manifest, versions, blipHistory, currentVersionId })
+
+        const blipParam = getBlipParam()
+        if (blipParam) {
+          renderBlipDetail(blipParam, currentVersionId)
+        } else {
+          renderRadarForVersion(currentVersionId, manifest)
+        }
+
+        window.addEventListener('popstate', () => {
+          const vid = getVersion() || manifest.current || orderedIds[0]
+          const bp = getBlipParam()
+          const previousVid = appState.getCurrentVersionId()
+          if (bp) {
+            appState.setCurrentVersionId(vid)
+            renderBlipDetail(bp, vid)
+          } else {
+            const currentlyShowingDetail = document.querySelector('main .blip-detail')
+            if (currentlyShowingDetail) {
+              showRadarView()
+              document.title = 'asee & payten radar'
+            }
+            if (vid !== previousVid || !document.querySelector('svg#radar-plot')) {
+              d3.select('#radar').selectAll('*').remove()
+              d3.select('main .graph-header').selectAll('*').remove()
+              d3.select('main .graph-footer').selectAll('*').remove()
+              d3.select('.quadrant-table__container').remove()
+              renderRadarForVersion(vid, manifest)
+            }
+          }
+        })
+      })
+      .catch((err) => {
+        console.error('Failed to load manifest:', err)
+        const fileNotFoundError = new FileNotFoundError(`Oops! We can't find the manifest file`)
+        plotErrorMessage(featureToggles.UIRefresh2022 ? fileNotFoundError : err, 'csv')
+      })
+  }
+
+  function renderRadarForVersion(versionId, manifest) {
+    const versions = appState.getVersions()
+    const entry = versions.get(versionId) || versions.get(manifest.current)
+    if (!entry) {
+      console.error(`Version "${versionId}" not found in manifest`)
+      return
+    }
+    appState.setCurrentVersionId(entry.id)
+    const alternativeIds = manifest.versions.map((v) => v.id)
+    const title = entry.label || entry.id
+    document.title = `asee & payten radar — ${title}`
+    plotRadarGraph(title, entry.blips, entry.id, alternativeIds)
+  }
+
+  self.init = function () {
+    plotLoading()
+    return self
+  }
+
+  return self
+}
+
 const DomainName = function (url) {
   var search = /.+:\/\/([^\\/]+)/
   var match = search.exec(decodeURIComponent(url.replace(/\+/g, ' ')))
@@ -360,6 +509,10 @@ const Factory = function () {
     } else if (domainName && domainName.endsWith('google.com') && paramId) {
       const sheetName = getSheetName()
       sheet = GoogleSheet(paramId, sheetName)
+      sheet.init().build()
+    } else if (!paramId && featureToggles.UIRefresh2022) {
+      const manifestUrl = new URL('files/manifest.json', document.baseURI).toString()
+      sheet = ManifestDocument(manifestUrl)
       sheet.init().build()
     } else {
       if (!featureToggles.UIRefresh2022) {

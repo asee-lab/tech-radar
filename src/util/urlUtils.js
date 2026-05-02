@@ -24,8 +24,32 @@ function getSheetName() {
   return queryParams.sheetName
 }
 
+function getVersion() {
+  const queryParams = QueryParams(window.location.search.substring(1))
+  return queryParams.version
+}
+
+function getBlipParam() {
+  const queryParams = QueryParams(window.location.search.substring(1))
+  return queryParams.blip
+}
+
+function constructVersionUrl(versionId) {
+  const base = window.location.pathname
+  return `${base}?version=${encodeURIComponent(versionId)}`
+}
+
+function constructBlipDetailUrl(versionId, blipName) {
+  const base = window.location.pathname
+  return `${base}?version=${encodeURIComponent(versionId)}&blip=${encodeURIComponent(blipName)}`
+}
+
 module.exports = {
   constructSheetUrl,
   getDocumentOrSheetId,
   getSheetName,
+  getVersion,
+  getBlipParam,
+  constructVersionUrl,
+  constructBlipDetailUrl,
 }

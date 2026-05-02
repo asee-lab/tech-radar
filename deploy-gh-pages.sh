@@ -8,16 +8,16 @@ export ASSET_PATH="/"
 
 # Set environment variables for the build
 export QUADRANTS='["Patterns and Practices","Runtime Infrastructure","Tools","Frameworks and libraries"]'
-export AUTO_LOAD_CSV="radar-2025.10.csv"
 
 # Build the production bundle
 echo "📦 Building production bundle..."
 npm run build:prod
 
-# Copy the CSV file to dist directory
-echo "📄 Copying CSV file to dist..."
+# Copy manifest + all version CSVs to dist directory
+echo "📄 Copying manifest and CSVs to dist..."
 mkdir -p dist/files
-cp files/radar-2025.10.csv dist/files/
+cp files/manifest.json dist/files/
+cp files/radar-*.csv dist/files/
 cp files/README.md dist/files/ 2>/dev/null || true
 
 # Copy CNAME file for custom domain

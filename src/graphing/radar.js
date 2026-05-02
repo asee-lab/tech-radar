@@ -92,8 +92,8 @@ const Radar = function (size, radar) {
     rings.forEach(function (ring, i) {
       var arc = d3
         .arc()
-        .innerRadius(ringCalculator.getRadius(i))
-        .outerRadius(ringCalculator.getRadius(i + 1))
+        .innerRadius(ringCalculator.getRingRadius(i))
+        .outerRadius(ringCalculator.getRingRadius(i + 1))
         .startAngle(toRadian(quadrant.startAngle))
         .endAngle(toRadian(quadrant.startAngle - 90))
 
@@ -114,7 +114,7 @@ const Radar = function (size, radar) {
           .append('text')
           .attr('class', 'line-text')
           .attr('y', CENTER + 4)
-          .attr('x', CENTER + (ringCalculator.getRadius(i) + ringCalculator.getRadius(i + 1)) / 2)
+          .attr('x', CENTER + (ringCalculator.getRingRadius(i) + ringCalculator.getRingRadius(i + 1)) / 2)
           .attr('text-anchor', 'middle')
           .text(ring.name())
       } else {
@@ -122,7 +122,7 @@ const Radar = function (size, radar) {
           .append('text')
           .attr('class', 'line-text')
           .attr('y', CENTER + 4)
-          .attr('x', CENTER - (ringCalculator.getRadius(i) + ringCalculator.getRadius(i + 1)) / 2)
+          .attr('x', CENTER - (ringCalculator.getRingRadius(i) + ringCalculator.getRingRadius(i + 1)) / 2)
           .attr('text-anchor', 'middle')
           .text(ring.name())
       }
@@ -275,8 +275,8 @@ const Radar = function (size, radar) {
 
       var maxRadius, minRadius
 
-      minRadius = ringCalculator.getRadius(i)
-      maxRadius = ringCalculator.getRadius(i + 1)
+      minRadius = ringCalculator.getRingRadius(i)
+      maxRadius = ringCalculator.getRingRadius(i + 1)
 
       var sumRing = ring
         .name()
