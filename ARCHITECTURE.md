@@ -3,10 +3,10 @@
 ## 1) What this repository is
 This repository is a browser-based interactive “Technology Radar” application that renders radar visualizations from an input source (Google Sheet, CSV, or JSON). It is a static single-page app with a Node/webpack build step and optional containerized runtime.
 
-- Root bootstrap: [src/site.js](/Users/aca/gh/tech-radar/src/site.js)
-- UI skeleton: [src/index.html](/Users/aca/gh/tech-radar/src/index.html)
-- Static build entry: [webpack.common.js](/Users/aca/gh/tech-radar/webpack.common.js)
-- Runtime bundle entry: [webpack.dev.js](/Users/aca/gh/tech-radar/webpack.dev.js), [webpack.prod.js](/Users/aca/gh/tech-radar/webpack.prod.js)
+- Root bootstrap: [src/site.js](src/site.js)
+- UI skeleton: [src/index.html](src/index.html)
+- Static build entry: [webpack.common.js](webpack.common.js)
+- Runtime bundle entry: [webpack.dev.js](webpack.dev.js), [webpack.prod.js](webpack.prod.js)
 
 ## 2) Technology Stack
 
@@ -55,22 +55,22 @@ The app follows a layered front-end architecture:
    - `src/models/radar.js`
 
 6. **Visualization/presentation layer**
-   - Core renderer: [src/graphing/radar.js](/Users/aca/gh/tech-radar/src/graphing/radar.js)
+   - Core renderer: [src/graphing/radar.js](src/graphing/radar.js)
    - Components:
-     - [src/graphing/components/quadrants.js](/Users/aca/gh/tech-radar/src/graphing/components/quadrants.js)
-     - [src/graphing/components/quadrantTables.js](/Users/aca/gh/tech-radar/src/graphing/components/quadrantTables.js)
-     - [src/graphing/components/search.js](/Users/aca/gh/tech-radar/src/graphing/components/search.js)
-     - [src/graphing/components/banner.js](/Users/aca/gh/tech-radar/src/graphing/components/banner.js)
-     - [src/graphing/components/alternativeRadars.js](/Users/aca/gh/tech-radar/src/graphing/components/alternativeRadars.js)
-     - [src/graphing/components/buttons.js](/Users/aca/gh/tech-radar/src/graphing/components/buttons.js)
-   - Core blip placement algorithms: [src/graphing/blips.js](/Users/aca/gh/tech-radar/src/graphing/blips.js)
-   - Geometry helpers: [src/util/ringCalculator.js](/Users/aca/gh/tech-radar/src/util/ringCalculator.js), [src/util/mathUtils.js](/Users/aca/gh/tech-radar/src/util/mathUtils.js)
+     - [src/graphing/components/quadrants.js](src/graphing/components/quadrants.js)
+     - [src/graphing/components/quadrantTables.js](src/graphing/components/quadrantTables.js)
+     - [src/graphing/components/search.js](src/graphing/components/search.js)
+     - [src/graphing/components/banner.js](src/graphing/components/banner.js)
+     - [src/graphing/components/alternativeRadars.js](src/graphing/components/alternativeRadars.js)
+     - [src/graphing/components/buttons.js](src/graphing/components/buttons.js)
+   - Core blip placement algorithms: [src/graphing/blips.js](src/graphing/blips.js)
+   - Geometry helpers: [src/util/ringCalculator.js](src/util/ringCalculator.js), [src/util/mathUtils.js](src/util/mathUtils.js)
 
 7. **Utility & cross-cutting layer**
-   - Input parsing: [src/util/queryParamProcessor.js](/Users/aca/gh/tech-radar/src/util/queryParamProcessor.js)
-   - URL handling: [src/util/urlUtils.js](/Users/aca/gh/tech-radar/src/util/urlUtils.js)
-   - HTML helpers/sanitization: [src/util/htmlUtil.js](/Users/aca/gh/tech-radar/src/util/htmlUtil.js), [src/util/inputSanitizer.js](/Users/aca/gh/tech-radar/src/util/inputSanitizer.js)
-   - Validation and exceptions: [src/util/contentValidator.js](/Users/aca/gh/tech-radar/src/util/contentValidator.js), [src/exceptions](/Users/aca/gh/tech-radar/src/exceptions)
+   - Input parsing: [src/util/queryParamProcessor.js](src/util/queryParamProcessor.js)
+   - URL handling: [src/util/urlUtils.js](src/util/urlUtils.js)
+   - HTML helpers/sanitization: [src/util/htmlUtil.js](src/util/htmlUtil.js), [src/util/inputSanitizer.js](src/util/inputSanitizer.js)
+   - Validation and exceptions: [src/util/contentValidator.js](src/util/contentValidator.js), [src/exceptions](src/exceptions)
 
 ## 4) Runtime sequence
 
@@ -97,29 +97,29 @@ flowchart TD
 ## 5) Feature toggle and compatibility mode
 
 There is a runtime feature switch in config:
-- [src/config.js](/Users/aca/gh/tech-radar/src/config.js) (currently `UIRefresh2022: true` in both dev/prod)
+- [src/config.js](src/config.js) (currently `UIRefresh2022: true` in both dev/prod)
 - Many rendering branches still keep legacy behavior behind this toggle, notably in:
   - `src/util/factory.js`
-  - [src/graphing/radar.js](/Users/aca/gh/tech-radar/src/graphing/radar.js)
-  - [src/graphing/config.js](/Users/aca/gh/tech-radar/src/graphing/config.js)
-  - [src/graphing/components](/Users/aca/gh/tech-radar/src/graphing/components)
+  - [src/graphing/radar.js](src/graphing/radar.js)
+  - [src/graphing/config.js](src/graphing/config.js)
+  - [src/graphing/components](src/graphing/components)
 
 This indicates a phased migration path where the old and refreshed UI paths are maintained in the same repo.
 
 ## 6) Build and runtime pipeline
 
-- Development: `npm run dev`, webpack-dev-server on port 8080, optional auto-load local CSV via `AUTO_LOAD_CSV` ([scripts] in [package.json](/Users/aca/gh/tech-radar/package.json)).
+- Development: `npm run dev`, webpack-dev-server on port 8080, optional auto-load local CSV via `AUTO_LOAD_CSV` ([scripts] in [package.json](package.json)).
 - Production bundle: `npm run build:prod` or `npm run build:gh-pages`.
 - Testing:
   - Unit: `npm run test`
   - Coverage: `npm run test:coverage`
   - E2E: Cypress (`npm run test:e2e-headless`)
 - Docker deployment:
-  - Container build via [Dockerfile](/Users/aca/gh/tech-radar/Dockerfile)
-  - Entrypoint script [build_and_start_nginx.sh](/Users/aca/gh/tech-radar/build_and_start_nginx.sh)
-  - Nginx config template [default.template](/Users/aca/gh/tech-radar/default.template)
+  - Container build via [Dockerfile](Dockerfile)
+  - Entrypoint script [build_and_start_nginx.sh](build_and_start_nginx.sh)
+  - Nginx config template [default.template](default.template)
 - Static hosting/deployment helper:
-  - GitHub Pages script [deploy-gh-pages.sh](/Users/aca/gh/tech-radar/deploy-gh-pages.sh)
+  - GitHub Pages script [deploy-gh-pages.sh](deploy-gh-pages.sh)
 
 ## 7) Observations for maintainers
 
