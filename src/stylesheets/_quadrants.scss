@@ -394,16 +394,68 @@
       }
 
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 16px;
       margin: $quadrantsGap auto;
       width: 100%;
       position: absolute;
       top: calc($quadrantWidth * 2 + $quadrantsGap);
     }
 
-    img:nth-child(n + 2) {
-      margin-left: 24px;
+    &__status {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    &__status-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    &__ring-guide {
+      display: grid;
+      gap: 12px;
+      width: min(100%, 720px);
+      margin: 0;
+    }
+
+    &__ring-guide-item {
+      display: grid;
+      grid-template-columns: minmax(110px, 140px) 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    &__ring-guide-term {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    &__ring-guide-desc {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $black;
+    }
+
+    .ring-tooltip--text {
+      left: 0;
+      top: calc(100% + 8px);
+    }
+
+    img {
+      margin: 0 !important;
     }
   }
 

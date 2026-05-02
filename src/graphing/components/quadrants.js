@@ -2,8 +2,9 @@ const d3 = require('d3')
 const { getElementWidth, getElementHeight, decodeHTML } = require('../../util/htmlUtil')
 const { toRadian } = require('../../util/mathUtils')
 const { getRingIdString } = require('../../util/stringUtil')
+const { graphConfig } = require('../config')
+const { renderRingTooltip } = require('../../util/ringTooltips')
 const {
-  graphConfig,
   getGraphSize,
   getScaledQuadrantWidth,
   getScaledQuadrantHeightWithGap,
@@ -430,6 +431,14 @@ function renderRadarLegends(radarElement, hasMovements) {
   } else {
     legendsContainer.html(`${newImage} New ${existingImage} Existing`)
   }
+
+  const ringGuide = legendsContainer.append('dl').classed('radar-legends__ring-guide', true)
+  graphConfig.rings.forEach((ringName, index) => {
+    const item = ringGuide.append('div').classed('radar-legends__ring-guide-item', true)
+    const term = item.append('dt').classed('radar-legends__ring-guide-term', true)
+    term.append('span').classed('radar-legends__ring-guide-label', true).text(ringName)
+    renderRingTooltip(term, ringName, `legend-${index}`)
+  })
 }
 
 function renderMobileView(quadrant) {

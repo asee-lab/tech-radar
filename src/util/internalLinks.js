@@ -88,6 +88,38 @@ function navigateToBlip(blipName, quadrants, contextVersionId) {
   }, 1500)
 }
 
+function isExternalLink(href) {
+  if (!href) return false
+
+  try {
+    const url = new URL(href, window.location.href)
+    return /^https?:$/.test(url.protocol) && url.origin !== window.location.origin
+  } catch (_error) {
+    return false
+  }
+}
+
+function isInternalBlipLink(href) {
+  if (!href) return false
+
+  return (
+    href.startsWith('#') ||
+    (!href.includes('://') &&
+      !href.startsWith('/') &&
+      !href.startsWith('?') &&
+      !href.startsWith('mailto:') &&
+      !href.startsWith('tel:'))
+  )
+}
+
+function decorateExternalLink(link) {
+  link
+    .classed('pop-out', true)
+    .attr('target', '_blank')
+    .attr('rel', 'noopener noreferrer')
+    .attr('aria-label', 'This is an external link. Opens in new tab')
+}
+
 /**
  * Sets up click handlers for internal links in blip descriptions
  * @param {HTMLElement} descriptionElement - DOM element containing the description
@@ -103,8 +135,13 @@ function setupInternalLinks(descriptionElement, quadrants, contextVersionId) {
     const link = d3.select(this)
     const href = link.attr('href')
 
+    if (isExternalLink(href)) {
+      decorateExternalLink(link)
+      return
+    }
+
     // Check if it's an internal link (format: #blip-name or just blip-name)
-    if (href && (href.startsWith('#') || !href.includes('://'))) {
+    if (isInternalBlipLink(href)) {
       // Extract blip name from the link
       const blipName = href.startsWith('#') ? href.substring(1) : href
 
@@ -121,7 +158,15 @@ function setupInternalLinks(descriptionElement, quadrants, contextVersionId) {
   })
 }
 
+function enrichDescriptionLinks(descriptionElement, quadrants, contextVersionId) {
+  setupInternalLinks(descriptionElement, quadrants, contextVersionId)
+}
+
 module.exports = {
   navigateToBlip,
   setupInternalLinks,
+  enrichDescriptionLinks,
+  decorateExternalLink,
+  isExternalLink,
+  isInternalBlipLink,
 }

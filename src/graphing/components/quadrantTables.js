@@ -2,8 +2,42 @@ const d3 = require('d3')
 const { graphConfig, getScale, uiConfig } = require('../config')
 const { stickQuadrantOnScroll } = require('./quadrants')
 const { removeAllSpaces } = require('../../util/stringUtil')
-const { setupInternalLinks } = require('../../util/internalLinks')
+const { enrichDescriptionLinks } = require('../../util/internalLinks')
 const appState = require('../../util/appState')
+const { renderRelatedBlipsList } = require('../../util/relatedBlips')
+const { constructBlipDetailUrl } = require('../../util/urlUtils')
+const { renderRingTooltip } = require('../../util/ringTooltips')
+
+function collapseExpandedBlips() {
+  d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
+  d3.selectAll('.blip-list__item-container__description.expanded').classed('expanded', false)
+  d3.selectAll('.blip-list__item-container__name').attr('aria-expanded', 'false')
+  d3.selectAll('.read-more-btn').classed('expanded', false).select('span').text('Read more')
+}
+
+function expandBlipContainer(blipItemDiv, description, readMoreButton) {
+  collapseExpandedBlips()
+  blipItemDiv.classed('expand', true)
+  description.classed('expanded', true)
+  blipItemDiv.select('.blip-list__item-container__name').attr('aria-expanded', 'true')
+  readMoreButton.classed('expanded', true).select('span').text('Show less')
+}
+
+function toggleBlipExpansion(blipItemDiv) {
+  const description = blipItemDiv.select('.blip-list__item-container__description')
+  const readMoreButton = blipItemDiv.select('.read-more-btn')
+  const shouldExpand = !description.classed('expanded')
+
+  if (shouldExpand) {
+    expandBlipContainer(blipItemDiv, description, readMoreButton)
+  } else {
+    collapseExpandedBlips()
+  }
+
+  if (window.innerWidth >= uiConfig.tabletViewWidth) {
+    stickQuadrantOnScroll()
+  }
+}
 
 function fadeOutAllBlips() {
   d3.selectAll('g > a.blip-link').attr('opacity', 0.3)
@@ -45,24 +79,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       .attr('tabindex', -1)
       .on('click search-result-click', function (e) {
         e.stopPropagation()
-
-        if (appState.isManifestMode() && e.type === 'click') {
-          const { navigateToBlipDetail } = require('../blipDetail')
-          navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
-          return
-        }
-
-        const expandFlag = d3.select(e.target.parentElement).classed('expand')
-
-        d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
-        d3.select(e.target.parentElement).classed('expand', !expandFlag)
-
-        d3.selectAll('.blip-list__item-container__name').attr('aria-expanded', 'false')
-        d3.select('.blip-list__item-container.expand .blip-list__item-container__name').attr('aria-expanded', 'true')
-
-        if (window.innerWidth >= uiConfig.tabletViewWidth) {
-          stickQuadrantOnScroll()
-        }
+        toggleBlipExpansion(blipItemDiv)
       })
 
     blipItemContainer
@@ -71,18 +88,50 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       .text(`${blip.blipText()}. ${blip.name()}`)
     blipItemContainer.append('span').classed('blip-list__item-container__name-arrow', true)
 
-    blipItemDiv
+    const description = blipItemDiv
       .append('div')
       .classed('blip-list__item-container__description', true)
       .attr('id', `blip-description-${blip.id()}`)
       .html(blip.description())
 
-    // Set up internal links in the description
+    const readMoreButton = blipItemDiv
+      .append('button')
+      .classed('read-more-btn', true)
+      .attr('type', 'button')
+      .attr('aria-controls', `blip-description-${blip.id()}`)
+      .attr('aria-label', `Read more about ${blip.name()}`)
+      .on('click', function (e) {
+        e.stopPropagation()
+        toggleBlipExpansion(blipItemDiv)
+      })
+    readMoreButton.append('span').text('Read more')
+
     if (blip.description() && quadrants) {
       const descriptionElement = document.getElementById(`blip-description-${blip.id()}`)
       if (descriptionElement) {
-        setupInternalLinks(descriptionElement, quadrants)
+        enrichDescriptionLinks(descriptionElement, quadrants, appState.getCurrentVersionId())
       }
+    }
+
+    if (appState.isManifestMode()) {
+      const history = blipItemDiv.append('div').classed('cmp-blip-history', true)
+      history
+        .append('a')
+        .classed('ctaDefaultLink cmp__link-with-arrow', true)
+        .attr('href', constructBlipDetailUrl(appState.getCurrentVersionId(), blip.name()))
+        .attr('aria-label', 'View blip history')
+        .on('click', function (event) {
+          event.preventDefault()
+          event.stopPropagation()
+          const { navigateToBlipDetail } = require('../blipDetail')
+          navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
+        })
+        .append('span')
+        .classed('cta-name', true)
+        .text('View blip history')
+      history.select('a').append('span').classed('cta-arrow', true)
+
+      renderRelatedBlipsList(blipItemDiv, blip.description(), appState.getCurrentVersionId(), blip.name())
     }
   }
   const blipGraphItem = d3.select(`g a#blip-link-${removeAllSpaces(blip.id())}`)
@@ -127,8 +176,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
   const blipClick = function (e) {
     if (appState.isManifestMode()) {
       e.stopPropagation()
-      const { navigateToBlipDetail } = require('../blipDetail')
-      navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
+      toggleBlipExpansion(d3.select(`.blip-list__item-container[data-blip-id="${blip.id()}"]`))
       return
     }
 
@@ -141,10 +189,12 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
     const blipId = d3.select(targetElement).attr('data-blip-id')
     highlightBlipInGraph(blipId)
 
-    d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
-
     let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"`)
-    selectedBlipContainer.classed('expand', true)
+    expandBlipContainer(
+      selectedBlipContainer,
+      selectedBlipContainer.select('.blip-list__item-container__description'),
+      selectedBlipContainer.select('.read-more-btn'),
+    )
 
     setTimeout(
       () => {
@@ -218,7 +268,10 @@ function renderQuadrantTables(quadrants, rings) {
         .append('h2')
         .classed('quadrant-table__ring-name', true)
         .attr('data-ring-name', ringName)
-        .text(ringName)
+        .call((header) => {
+          header.append('span').classed('quadrant-table__ring-name-label', true).text(ringName)
+          renderRingTooltip(header, ringName, `${quadrant.order}-${ringName}`)
+        })
       quadrantContainer
         .append('ul')
         .classed('blip-list', true)

@@ -385,6 +385,8 @@ const ManifestDocument = function (manifestUrl) {
             if (!blipHistory.has(key)) blipHistory.set(key, [])
             blipHistory.get(key).push({
               versionId: id,
+              versionLabel: entry.label || entry.id,
+              versionDate: entry.date,
               name: blip.name,
               ring: (blip.ring || '').toLowerCase(),
               quadrant: blip.quadrant,
