@@ -2,6 +2,8 @@ const d3 = require('d3')
 const { selectRadarQuadrant, removeScrollListener } = require('./quadrants')
 const { getRingIdString } = require('../../util/stringUtil')
 const { uiConfig } = require('../config')
+const appState = require('../../util/appState')
+const { constructVersionUrl, isSearchView } = require('../../util/urlUtils')
 
 function addListItem(quadrantList, name, callback) {
   quadrantList
@@ -15,6 +17,10 @@ function addListItem(quadrantList, name, callback) {
     .text(name)
     .on('click', function (e) {
       d3.select('#radar').classed('no-blips', false)
+      d3.select('#radar').style('display', null)
+      d3.select('main .all-quadrants-mobile').style('display', null)
+      d3.select('main .graph-footer').style('display', null)
+      d3.select('main .radar-search-page').style('display', 'none')
       d3.select('#auto-complete').property('value', '')
       removeScrollListener()
 
@@ -33,13 +39,21 @@ function addListItem(quadrantList, name, callback) {
 
       d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
 
+      if (name !== 'Search' && name !== 'All quadrants' && isSearchView()) {
+        window.history.pushState(
+          { type: 'radar', versionId: appState.getCurrentVersionId() },
+          '',
+          constructVersionUrl(appState.getCurrentVersionId()),
+        )
+      }
+
       if (callback) {
         callback()
       }
     })
 }
 
-function renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar) {
+function renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar, renderSearchPage) {
   const subnavContainer = radarHeader.append('nav').classed('quadrant-subnav', true)
 
   const subnavDropdown = subnavContainer
@@ -50,8 +64,9 @@ function renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar) {
   const subnavArrow = subnavDropdown.append('span').classed('quadrant-subnav__dropdown-arrow', true)
 
   const quadrantList = subnavContainer.append('ul').classed('quadrant-subnav__list', true)
+  addListItem(quadrantList, 'Search', renderSearchPage)
   addListItem(quadrantList, 'All quadrants', renderFullRadar)
-  d3.select('li.quadrant-subnav__list-item').classed('active-item', true).select('button').attr('aria-selected', 'true')
+  d3.select('#subnav-item-all-quadrants').classed('active-item', true).select('button').attr('aria-selected', 'true')
 
   subnavDropdown.on('click', function () {
     subnavArrow.classed('rotate', !d3.select('span.quadrant-subnav__dropdown-arrow').classed('rotate'))

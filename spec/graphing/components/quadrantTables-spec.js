@@ -1,6 +1,14 @@
 require('../../helpers/jsdom')
 
-jest.mock('d3', () => require('d3/dist/d3.min.js'))
+jest.mock('d3', () => {
+  const fs = require('fs')
+  const path = require('path')
+  const vm = require('vm')
+  const module = { exports: {} }
+  const code = fs.readFileSync(path.join(process.cwd(), 'node_modules/d3-selection/dist/d3-selection.js'), 'utf8')
+  vm.runInNewContext(code, { exports: module.exports, module, require, document: global.document, window: global.window })
+  return module.exports
+})
 
 jest.mock('../../../src/graphing/components/quadrants', () => ({
   stickQuadrantOnScroll: jest.fn(),
@@ -21,6 +29,7 @@ describe('quadrantTables', () => {
   const blip = {
     id: () => 1,
     name: () => 'Testcontainers',
+    slug: () => 'testcontainers',
     blipText: () => '7',
     description: () => '<p>Use <a href="Kafka">Kafka</a> and <a href="https://example.com">external docs</a>.</p>',
     groupIdInGraph: () => '',
@@ -90,10 +99,10 @@ describe('quadrantTables', () => {
     renderBlipDescription(blip, ring, quadrant, tip, null, [])
 
     const historyLink = document.querySelector('.cmp-blip-history a')
-    expect(historyLink.getAttribute('href')).toBe('/?blip=Testcontainers')
+    expect(historyLink.getAttribute('href')).toBe('/?blip=testcontainers')
 
     historyLink.dispatchEvent(new MouseEvent('click', { bubbles: true }))
-    expect(navigateToBlipDetail).toHaveBeenCalledWith('Testcontainers', '2026.04')
+    expect(navigateToBlipDetail).toHaveBeenCalledWith('testcontainers', '2026.04')
 
     const relatedPill = document.querySelector('.related-blip-item__href')
     expect(relatedPill).not.toBeNull()

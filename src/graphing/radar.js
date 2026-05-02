@@ -13,7 +13,7 @@ const { graphConfig, getGraphSize, uiConfig } = require('./config')
 
 const { renderBanner } = require('./components/banner')
 const { renderQuadrantSubnav } = require('./components/quadrantSubnav')
-const { renderSearch } = require('./components/search')
+const { hideSearchPage, renderSearchPage, showSearchPage } = require('./components/searchPage')
 const { renderAlternativeRadars } = require('./components/alternativeRadars')
 const {
   renderRadarQuadrants,
@@ -24,7 +24,8 @@ const {
 const { renderQuadrantTables } = require('./components/quadrantTables')
 const { addQuadrantNameInPdfView, addRadarLinkInPdfView } = require('./pdfPage')
 
-const { constructSheetUrl } = require('../util/urlUtils')
+const appState = require('../util/appState')
+const { constructSheetUrl, constructVersionUrl, isSearchView } = require('../util/urlUtils')
 const { toRadian } = require('../util/mathUtils')
 
 const MIN_BLIP_WIDTH = 12
@@ -514,6 +515,7 @@ const Radar = function (size, radar) {
 
   function renderFullRadar() {
     removeScrollListener()
+    hideSearchPage()
 
     d3.select('#auto-complete').property('value', '')
 
@@ -535,8 +537,9 @@ const Radar = function (size, radar) {
     d3.select('#radar').classed('mobile', false)
     d3.select('.all-quadrants-mobile').classed('show-all-quadrants-mobile', true)
 
-    d3.select('li.quadrant-subnav__list-item.active-item').classed('active-item', false)
-    d3.select('li.quadrant-subnav__list-item').classed('active-item', true)
+    d3.selectAll('li.quadrant-subnav__list-item.active-item').classed('active-item', false)
+    d3.selectAll(`li.quadrant-subnav__list-item button`).attr('aria-selected', null)
+    d3.select('#subnav-item-all-quadrants').classed('active-item', true).select('button').attr('aria-selected', 'true')
 
     d3.select('.quadrant-subnav__dropdown-selector').text('All quadrants')
 
@@ -577,6 +580,15 @@ const Radar = function (size, radar) {
     d3.selectAll('.blip-list__item-container__name').attr('aria-expanded', 'false')
 
     d3.selectAll(`.quadrant-group rect:nth-child(2n)`).attr('tabindex', 0)
+  }
+
+  function navigateToFullRadar() {
+    window.history.pushState(
+      { type: 'radar', versionId: appState.getCurrentVersionId() },
+      '',
+      constructVersionUrl(appState.getCurrentVersionId()),
+    )
+    renderFullRadar()
   }
 
   function searchBlip(_e, ui) {
@@ -782,8 +794,8 @@ const Radar = function (size, radar) {
     renderBanner(renderFullRadar)
 
     if (featureToggles.UIRefresh2022) {
-      renderQuadrantSubnav(radarHeader, quadrants, renderFullRadar)
-      renderSearch(radarHeader, quadrants)
+      renderSearchPage(quadrants, navigateToFullRadar)
+      renderQuadrantSubnav(radarHeader, quadrants, navigateToFullRadar, () => showSearchPage())
       renderAlternativeRadars(radarFooter, alternatives, currentSheet)
       renderQuadrantTables(quadrants, rings)
 
@@ -836,6 +848,9 @@ const Radar = function (size, radar) {
       renderRadarLegends(radarElement, hasMovementData(quadrants))
       hideTooltipOnScroll(tip)
       addRadarLinkInPdfView()
+      if (isSearchView()) {
+        showSearchPage(false)
+      }
     }
   }
 

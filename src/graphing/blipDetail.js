@@ -7,7 +7,9 @@ const { renderRingTooltip } = require('../util/ringTooltips')
 const appState = require('../util/appState')
 
 function hideRadarView() {
-  d3.select('main .graph-header').style('display', 'none')
+  d3.select('main .graph-header').style('display', null)
+  d3.select('main .radar-search-page').style('display', 'none')
+  d3.select('main .radar-intro').style('display', 'none')
   d3.select('#radar').style('display', 'none')
   d3.select('main .all-quadrants-mobile').style('display', 'none')
   d3.select('main .graph-footer').style('display', 'none')
@@ -17,6 +19,8 @@ function hideRadarView() {
 
 function showRadarView() {
   d3.select('main .graph-header').style('display', null)
+  d3.select('main .radar-search-page').style('display', 'none')
+  d3.select('main .radar-intro').style('display', null)
   d3.select('#radar').style('display', null)
   d3.select('main .all-quadrants-mobile').style('display', null)
   d3.select('main .graph-footer').style('display', null)
@@ -67,13 +71,13 @@ function renderTimelineEntry(wrapper, entry, index) {
   enrichDescriptionLinks(description, [], entry.versionId)
 }
 
-function renderBlipDetail(blipName, versionId) {
+function renderBlipDetail(blipIdentifier, versionId) {
   const history = appState.getBlipHistory()
   if (!history) return
 
-  const entries = history.get(blipName.toLowerCase())
+  const entries = history.get(blipIdentifier.toLowerCase())
   if (!entries || !entries.length) {
-    console.warn(`Blip "${blipName}" not found in any version`)
+    console.warn(`Blip "${blipIdentifier}" not found in any version`)
     return
   }
 
@@ -130,11 +134,11 @@ function renderBlipDetail(blipName, versionId) {
   scrollToTop()
 }
 
-function navigateToBlipDetail(blipName, versionId) {
+function navigateToBlipDetail(blipIdentifier, versionId) {
   const effectiveVersion = versionId || appState.getCurrentVersionId()
-  const url = constructBlipDetailUrl(blipName)
-  window.history.pushState({ type: 'blip', blipName, versionId: effectiveVersion }, '', url)
-  renderBlipDetail(blipName, effectiveVersion)
+  const url = constructBlipDetailUrl(blipIdentifier)
+  window.history.pushState({ type: 'blip', blipName: blipIdentifier, versionId: effectiveVersion }, '', url)
+  renderBlipDetail(blipIdentifier, effectiveVersion)
 }
 
 module.exports = {

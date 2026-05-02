@@ -42,7 +42,7 @@ function navigateToBlip(blipName, quadrants, contextVersionId) {
     const inContext = entries.find((e) => e.versionId === preferred)
     const targetEntry = inContext || entries[0]
     const { navigateToBlipDetail } = require('../graphing/blipDetail')
-    navigateToBlipDetail(targetEntry.name, targetEntry.versionId)
+    navigateToBlipDetail(targetEntry.slug || targetEntry.name, targetEntry.versionId)
     return
   }
 

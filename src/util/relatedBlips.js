@@ -44,6 +44,7 @@ function getRelatedBlipSummaries(descriptionHtml, contextVersionId, currentBlipN
     .filter((entry, index, entries) => entries.findIndex((candidate) => candidate.name === entry.name) === index)
     .map((entry) => ({
       name: entry.name,
+      slug: entry.slug || '',
       ring: entry.ring,
       quadrant: entry.quadrant,
       versionId: entry.versionId,
@@ -68,7 +69,7 @@ function renderRelatedBlipsList(parentSelection, descriptionHtml, contextVersion
     const link = item
       .append('a')
       .classed('related-blip-item__href', true)
-      .attr('href', constructBlipDetailUrl(relatedBlip.name))
+      .attr('href', constructBlipDetailUrl(relatedBlip.slug || relatedBlip.name))
       .attr(
         'aria-label',
         `${relatedBlip.name},Quadrant ${relatedBlip.quadrant}, Ring ${relatedBlip.ring}, ${relatedBlip.versionLabel} volume`,
@@ -76,7 +77,7 @@ function renderRelatedBlipsList(parentSelection, descriptionHtml, contextVersion
       .on('click', function (event) {
         event.preventDefault()
         const { navigateToBlipDetail } = require('../graphing/blipDetail')
-        navigateToBlipDetail(relatedBlip.name, relatedBlip.versionId)
+        navigateToBlipDetail(relatedBlip.slug || relatedBlip.name, relatedBlip.versionId)
       })
 
     link.append('div').classed('blip-name', true).attr('data-blip-name', relatedBlip.name).text(relatedBlip.name)

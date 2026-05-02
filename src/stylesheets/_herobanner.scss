@@ -27,6 +27,7 @@
     &__wrapper {
       margin: auto;
       width: 90%;
+      transform: translateY(-12px);
 
       @include layout-margin(1, $screen-small);
       @include layout-margin(1, $screen-medium);
@@ -45,7 +46,9 @@
     }
 
     &__subtitle-text {
-      font-weight: 630;
+      font-family: 'Bitter', serif;
+      font-size: 1.125rem;
+      font-weight: 700;
       width: 50%;
       text-align: left;
       text-transform: none;
@@ -53,7 +56,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      line-height: 1.75rem;
+      line-height: 1.2;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
 
@@ -63,11 +66,34 @@
       }
 
       @include media-query-large {
+        font-size: 1.25rem;
         width: 25%;
       }
 
       @include media-query-xlarge {
         width: 33%;
+      }
+    }
+  }
+
+  .radar-intro {
+    margin: 32px auto;
+
+    @include layout-margin(1, $screen-small);
+    @include layout-margin(calc(10 / 12), $screen-large);
+    @include layout-margin(calc(10 / 12), $screen-xlarge);
+    @include layout-margin(calc(10 / 12), $screen-xxlarge);
+    @include layout-margin(calc(8 / 12), $screen-xxxlarge);
+
+    p {
+      max-width: 960px;
+      margin: 0;
+      color: $black;
+      font-size: 1rem;
+      line-height: 1.6;
+
+      @include media-query-large {
+        font-size: 1.125rem;
       }
     }
   }

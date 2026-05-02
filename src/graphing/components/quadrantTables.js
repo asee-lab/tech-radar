@@ -151,13 +151,13 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       history
         .append('a')
         .classed('ctaDefaultLink cmp__link-with-arrow', true)
-        .attr('href', constructBlipDetailUrl(blip.name()))
+        .attr('href', constructBlipDetailUrl(blip.slug() || blip.name()))
         .attr('aria-label', 'View blip history')
         .on('click', function (event) {
           event.preventDefault()
           event.stopPropagation()
           const { navigateToBlipDetail } = require('../blipDetail')
-          navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
+          navigateToBlipDetail(blip.slug() || blip.name(), appState.getCurrentVersionId())
         })
         .append('span')
         .classed('cta-name', true)

@@ -34,14 +34,25 @@ function getBlipParam() {
   return queryParams.blip
 }
 
+function isSearchView() {
+  const queryParams = QueryParams(window.location.search.substring(1))
+  return queryParams.view === 'search'
+}
+
+function constructSearchUrl(versionId) {
+  const base = window.location.pathname
+  const version = versionId ? `&version=${encodeURIComponent(versionId)}` : ''
+  return `${base}?view=search${version}`
+}
+
 function constructVersionUrl(versionId) {
   const base = window.location.pathname
   return `${base}?version=${encodeURIComponent(versionId)}`
 }
 
-function constructBlipDetailUrl(blipName) {
+function constructBlipDetailUrl(blipIdentifier) {
   const base = window.location.pathname
-  return `${base}?blip=${encodeURIComponent(blipName)}`
+  return `${base}?blip=${encodeURIComponent(blipIdentifier)}`
 }
 
 module.exports = {
@@ -50,6 +61,8 @@ module.exports = {
   getSheetName,
   getVersion,
   getBlipParam,
+  isSearchView,
+  constructSearchUrl,
   constructVersionUrl,
   constructBlipDetailUrl,
 }

@@ -13,6 +13,16 @@ describe('Blip', function () {
     expect(blip.name()).toEqual('My Blip')
   })
 
+  it('has a slug', function () {
+    blip = new Blip('My Blip', new Ring('My Ring'), true, null, 'topic', 'description', 'my-blip')
+
+    expect(blip.slug()).toEqual('my-blip')
+  })
+
+  it('has empty slug when not provided', function () {
+    expect(blip.slug()).toEqual('')
+  })
+
   it('has a topic', function () {
     blip = new Blip('My Blip', new Ring('My Ring'), true, null, 'topic', 'description')
 
