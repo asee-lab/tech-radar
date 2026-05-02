@@ -53,7 +53,7 @@ function highlightBlipInTable(selectedBlip) {
 
 function highlightBlipInGraph(blipIdToFocus) {
   fadeOutAllBlips()
-  const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}'`)
+  const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}']`)
   fadeInSelectedBlip(selectedBlipOnGraph)
 }
 
@@ -140,7 +140,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
     const isGroupIdInGraph = !targetElement.classList.contains('blip-link') ? true : false
     const blipWrapper = d3.select(targetElement)
     const blipIdToFocus = blip.groupIdInGraph() ? blipWrapper.attr('data-group-id') : blipWrapper.attr('data-blip-id')
-    const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}'`)
+    const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}']`)
     highlightBlipInGraph(blipIdToFocus)
     highlightBlipInTable(blipTableItem)
 
@@ -189,7 +189,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
     const blipId = d3.select(targetElement).attr('data-blip-id')
     highlightBlipInGraph(blipId)
 
-    let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"`)
+    let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"]`)
     expandBlipContainer(
       selectedBlipContainer,
       selectedBlipContainer.select('.blip-list__item-container__description'),
@@ -204,7 +204,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
 
         const isGroupBlip = isNaN(parseInt(blipId))
         if (isGroupBlip) {
-          selectedBlipContainer = d3.select(`.blip-list__item-container[data-group-id="${blipId}"`)
+          selectedBlipContainer = d3.select(`.blip-list__item-container[data-group-id="${blipId}"]`)
         }
         const elementToFocus = selectedBlipContainer.select('button.blip-list__item-container__name')
         elementToFocus.node()?.scrollIntoView({

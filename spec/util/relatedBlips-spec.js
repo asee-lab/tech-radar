@@ -1,8 +1,9 @@
+jest.mock('d3', () => ({
+  select: jest.fn(),
+}))
+
 const appState = require('../../src/util/appState')
-const {
-  collectRelatedBlipsFromDescription,
-  getRelatedBlipSummaries,
-} = require('../../src/util/relatedBlips')
+const { collectRelatedBlipsFromDescription, getRelatedBlipSummaries } = require('../../src/util/relatedBlips')
 
 describe('relatedBlips util', () => {
   beforeEach(() => {

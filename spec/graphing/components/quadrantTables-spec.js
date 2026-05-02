@@ -1,6 +1,6 @@
 require('../../helpers/jsdom')
 
-const d3 = require('d3')
+jest.mock('d3', () => require('d3/dist/d3.min.js'))
 
 jest.mock('../../../src/graphing/components/quadrants', () => ({
   stickQuadrantOnScroll: jest.fn(),

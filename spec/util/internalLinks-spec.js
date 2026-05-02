@@ -1,3 +1,37 @@
+jest.mock('d3', () => {
+  const select = (node) => ({
+    node: () => node,
+    attr(name, value) {
+      if (value === undefined) return node.getAttribute(name)
+      node.setAttribute(name, value)
+      return this
+    },
+    classed(name, enabled) {
+      if (enabled === undefined) return node.classList.contains(name)
+      node.classList.toggle(name, enabled)
+      return this
+    },
+    on(name, handler) {
+      node[`__handler_${name}`] = handler
+      return this
+    },
+    selectAll(selector) {
+      return {
+        each(callback) {
+          Array.from(node.querySelectorAll(selector)).forEach((child) => callback.call(child))
+        },
+      }
+    },
+  })
+
+  return { select }
+})
+
+jest.mock('../../src/graphing/components/quadrants', () => ({
+  selectRadarQuadrant: jest.fn(),
+  removeScrollListener: jest.fn(),
+}))
+
 const { enrichDescriptionLinks } = require('../../src/util/internalLinks')
 
 describe('internalLinks enrichDescriptionLinks', () => {
