@@ -8,6 +8,12 @@ const {
   createGroupBlip,
   thereIsCollision,
   sortBlipCoordinates,
+  findClearPlacement,
+  relaxBlipsInRing,
+  axisHalfChord,
+  pairSeparation,
+  EFFECTIVE_RADIUS,
+  RING_PADDING,
 } = require('../../src/graphing/blips')
 const Chance = require('chance')
 const { graphConfig } = require('../../src/graphing/config')
@@ -121,8 +127,9 @@ describe('Blips', function () {
   it('should return first quadrant group blip coordinates for ring1', function () {
     const baseCoords = groupBlipsBaseCoords(0)
 
-    expect(baseCoords.new).toEqual([419.94200893545406, 442.552])
-    expect(baseCoords['existing']).toEqual([379.94200893545406, 471.552])
+    // Ring radii now use RING_RATIOS [0, 0.49, 0.66, 0.83, 1.0] × effectiveQuadrantWidth (528).
+    expect(baseCoords.new).toEqual([377.970953766445, 418.32000000000005])
+    expect(baseCoords['existing']).toEqual([337.970953766445, 447.32000000000005])
   })
 
   it('should transpose base coords for a new blip in ring1 to other three quadrants', function () {
@@ -130,27 +137,27 @@ describe('Blips', function () {
 
     const coordsMap = transposeQuadrantCoords(newBlipBaseCoords, graphConfig.newGroupBlipWidth)
     expect(coordsMap.first).toEqual(newBlipBaseCoords)
-    expect(coordsMap.second).toEqual([newBlipBaseCoords[0], 589.448])
-    expect(coordsMap.third).toEqual([552.057991064546, newBlipBaseCoords[1]])
-    expect(coordsMap.fourth).toEqual([552.057991064546, 589.448])
+    expect(coordsMap.second).toEqual([newBlipBaseCoords[0], 613.68])
+    expect(coordsMap.third).toEqual([594.0290462335549, newBlipBaseCoords[1]])
+    expect(coordsMap.fourth).toEqual([594.0290462335549, 613.68])
   })
 
   it('should return first quadrant group blip coordinates for ring2 with index 1', function () {
     const baseCoords = groupBlipsBaseCoords(1)
-    expect(baseCoords.new).toEqual([287.0075702088335, 340.86317046071997])
-    expect(baseCoords['existing']).toEqual([247.0075702088335, 369.86317046071997])
+    expect(baseCoords.new).toEqual([241.30543935386208, 308.8621939238224])
+    expect(baseCoords['existing']).toEqual([201.30543935386208, 337.8621939238224])
   })
 
   it('should return first quadrant group blip coordinates for ring3 with index 2', function () {
     const baseCoords = groupBlipsBaseCoords(2)
-    expect(baseCoords.new).toEqual([300.048, 153.99348500067663])
-    expect(baseCoords['existing']).toEqual([260.048, 182.99348500067663])
+    expect(baseCoords.new).toEqual([293.31999999999994, 142.3402471673532])
+    expect(baseCoords['existing']).toEqual([253.31999999999994, 171.3402471673532])
   })
 
   it('should return first quadrant group blip coordinates for ring4 with index 3', function () {
     const baseCoords = groupBlipsBaseCoords(3)
-    expect(baseCoords.new).toEqual([408.91602532749283, 23.149928577467563])
-    expect(baseCoords['existing']).toEqual([368.91602532749283, 52.14992857746756])
+    expect(baseCoords.new).toEqual([406.1070924055526, 7.2196783647420375])
+    expect(baseCoords['existing']).toEqual([366.1070924055526, 36.21967836474204])
   })
 
   it('should return group blip tool tip text as "Click to view all" count is more than 15', function () {
@@ -170,10 +177,11 @@ describe('Blips', function () {
 
   it('should return ring radius based on the ring index', function () {
     expect(getRingRadius(0)).toBe(0)
-    expect(getRingRadius(1)).toBe(161.792)
-    expect(getRingRadius(2)).toBe(333.824)
-    expect(getRingRadius(3)).toBe(425.984)
-    expect(getRingRadius(4)).toBe(507.904)
+    // RING_RATIOS [0, 0.49, 0.66, 0.83, 1.0] × effectiveQuadrantWidth (528).
+    expect(getRingRadius(1)).toBeCloseTo(258.72, 5)
+    expect(getRingRadius(2)).toBe(348.48)
+    expect(getRingRadius(3)).toBeCloseTo(438.24, 5)
+    expect(getRingRadius(4)).toBe(528)
     expect(getRingRadius(5)).toBe(0)
   })
 
@@ -303,5 +311,129 @@ describe('Blips', function () {
       { coordinates: [200, 200], width: 22 },
       { coordinates: [40, 40], width: 22 },
     ])
+  })
+})
+
+describe('findClearPlacement (UIRefresh2022)', function () {
+  // RING_RATIOS [0, 0.49, 0.66, 0.83, 1.0] × effectiveQuadrantWidth (528):
+  //   ring 0 (Adopt) : 0     .. 258.72
+  //   ring 1 (Trial) : 258.72.. 348.48
+  //   ring 2 (Assess): 348.48.. 438.24
+  //   ring 3 (Hold)  : 438.24.. 528
+  const RADAR_CENTRE = 528
+  const RING_BOUNDS = [
+    [0, 258.72],
+    [258.72, 348.48],
+    [348.48, 438.24],
+    [438.24, 528],
+  ]
+  const QUADRANTS = [
+    { order: 'first', startAngle: 0 },
+    { order: 'second', startAngle: -90 },
+    { order: 'third', startAngle: 90 },
+    { order: 'fourth', startAngle: -180 },
+  ]
+
+  function makeBlip() {
+    return { width: 22 }
+  }
+
+  function distFromCentre(coords) {
+    const dx = coords[0] - RADAR_CENTRE
+    const dy = coords[1] - RADAR_CENTRE
+    return Math.hypot(dx, dy)
+  }
+
+  it('keeps every placed blip inside its ring band envelope', function () {
+    QUADRANTS.forEach(({ order, startAngle }) => {
+      RING_BOUNDS.forEach(([innerArc, outerArc], ringIndex) => {
+        const allCoords = []
+        for (let i = 0; i < 6; i++) {
+          const coords = findClearPlacement(makeBlip(), ringIndex, startAngle, order, allCoords)
+          allCoords.push({ coordinates: coords, width: 22 })
+
+          const r = distFromCentre(coords)
+          // Drawn centre is offset by ~2 px from logical (x, y); the EFFECTIVE_RADIUS
+          // (= 18 + 2) already absorbs that, so on every ring boundary the blip
+          // envelope must stay strictly inside.
+          expect(r).toBeGreaterThanOrEqual(innerArc + RING_PADDING + EFFECTIVE_RADIUS - 1e-6)
+          expect(r).toBeLessThanOrEqual(outerArc - RING_PADDING - EFFECTIVE_RADIUS + 1e-6)
+        }
+      })
+    })
+  })
+
+  it('keeps every placed blip clear of the inset stripe cross (axis clearance)', function () {
+    // axisHalfChord = quadrantsGap/2 + EFFECTIVE_RADIUS + AXIS_PADDING = 16 + 20 + 4 = 40.
+    // For every quadrant, both |x − 528| and |y − 528| must be ≥ axisHalfChord
+    // so the drawn outer ring never enters the visible stripe cross.
+    const halfChord = axisHalfChord()
+    expect(halfChord).toBe(40)
+
+    QUADRANTS.forEach(({ order, startAngle }) => {
+      RING_BOUNDS.forEach((_, ringIndex) => {
+        const allCoords = []
+        for (let i = 0; i < 6; i++) {
+          const coords = findClearPlacement(makeBlip(), ringIndex, startAngle, order, allCoords)
+          allCoords.push({ coordinates: coords, width: 22 })
+
+          expect(Math.abs(coords[0] - RADAR_CENTRE)).toBeGreaterThanOrEqual(halfChord - 1e-6)
+          expect(Math.abs(coords[1] - RADAR_CENTRE)).toBeGreaterThanOrEqual(halfChord - 1e-6)
+        }
+      })
+    })
+  })
+
+  it('keeps every pair of blips at least 2*EFFECTIVE_RADIUS + BLIP_PADDING apart in dense rings', function () {
+    // pairSeparation = 2*EFFECTIVE_RADIUS + BLIP_PADDING = 44.
+    const minDist = pairSeparation()
+    expect(minDist).toBe(44)
+
+    // Counts are calibrated to each ring's geometric single-layer capacity
+    // at strict pair separation (Trial/Assess/Hold are now Hold-width, so
+    // only ~9/12/16 blips fit cleanly along their arcs respectively). Adopt
+    // is the widest ring but its inner edge is constrained by the inset
+    // stripe cross, so 8 blips is a representative dense load.
+    const denseSpec = [
+      { ringIndex: 0, count: 8 }, // Adopt
+      { ringIndex: 1, count: 9 }, // Trial — narrowest at small radius
+      { ringIndex: 2, count: 11 }, // Assess
+      { ringIndex: 3, count: 14 }, // Hold
+    ]
+
+    QUADRANTS.forEach(({ order, startAngle }) => {
+      denseSpec.forEach(({ ringIndex, count }) => {
+        const allCoords = []
+        for (let i = 0; i < count; i++) {
+          const coords = findClearPlacement(makeBlip(), ringIndex, startAngle, order, allCoords)
+          allCoords.push({ coordinates: coords, width: 22 })
+        }
+        // Run the same relaxation step as production placement — once it
+        // converges, no pair may sit closer than `minDist`.
+        relaxBlipsInRing(allCoords, ringIndex, startAngle)
+
+        // The relaxation pass terminates after a fixed iteration budget, so we
+        // tolerate sub-pixel residual overlap that's invisible on screen but
+        // still well inside the BLIP_PADDING margin (4 px).
+        const TOLERANCE = 1
+        for (let i = 0; i < allCoords.length; i++) {
+          for (let j = i + 1; j < allCoords.length; j++) {
+            const a = allCoords[i].coordinates
+            const b = allCoords[j].coordinates
+            const d = Math.hypot(a[0] - b[0], a[1] - b[1])
+            expect(d).toBeGreaterThanOrEqual(minDist - TOLERANCE)
+          }
+        }
+      })
+    })
+  })
+
+  it('exposes the geometry constants the placement algorithm relies on', function () {
+    // Sanity checks so future tweaks to the ring widening / gap don't silently
+    // re-introduce the original bugs (stripe cross overlap, undersized envelope).
+    expect(EFFECTIVE_RADIUS).toBe(20)
+    expect(RING_PADDING).toBe(4)
+    expect(axisHalfChord()).toBe(40)
+    expect(pairSeparation()).toBe(44)
   })
 })

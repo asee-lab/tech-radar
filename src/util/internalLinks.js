@@ -1,5 +1,6 @@
 const d3 = require('d3')
 const { selectRadarQuadrant, removeScrollListener } = require('../graphing/components/quadrants')
+const appState = require('./appState')
 
 /**
  * Internal Links for Tech Radar Blips
@@ -24,9 +25,27 @@ const { selectRadarQuadrant, removeScrollListener } = require('../graphing/compo
  * Navigates to a blip when an internal link is clicked
  * @param {string} blipName - The name of the blip to navigate to (case-insensitive)
  * @param {Array} quadrants - Array of quadrant objects with blips
+ * @param {string} [contextVersionId] - Preferred version to land on in manifest mode.
+ *                                      Falls back to the blip's most-recent appearance
+ *                                      if it doesn't exist in that version.
  */
-function navigateToBlip(blipName, quadrants) {
-  // Find the blip across all quadrants
+function navigateToBlip(blipName, quadrants, contextVersionId) {
+  if (appState.isManifestMode()) {
+    const history = appState.getBlipHistory()
+    const entries = history && history.get(blipName.toLowerCase())
+    if (!entries || !entries.length) {
+      console.warn(`⚠️ Internal link: Could not find blip "${blipName}"`)
+      return
+    }
+    const preferred = contextVersionId || appState.getCurrentVersionId()
+    // Prefer landing on the context version if the blip exists there; else use newest entry.
+    const inContext = entries.find((e) => e.versionId === preferred)
+    const targetEntry = inContext || entries[0]
+    const { navigateToBlipDetail } = require('../graphing/blipDetail')
+    navigateToBlipDetail(targetEntry.name, targetEntry.versionId)
+    return
+  }
+
   let targetBlip = null
   let targetQuadrant = null
 
@@ -73,8 +92,9 @@ function navigateToBlip(blipName, quadrants) {
  * Sets up click handlers for internal links in blip descriptions
  * @param {HTMLElement} descriptionElement - DOM element containing the description
  * @param {Array} quadrants - Array of quadrant objects with blips
+ * @param {string} [contextVersionId] - Manifest-mode version to navigate within
  */
-function setupInternalLinks(descriptionElement, quadrants) {
+function setupInternalLinks(descriptionElement, quadrants, contextVersionId) {
   // Convert to D3 selection if needed
   const selection = d3.select(descriptionElement)
 
@@ -92,7 +112,7 @@ function setupInternalLinks(descriptionElement, quadrants) {
       link.on('click', function (event) {
         event.preventDefault()
         event.stopPropagation()
-        navigateToBlip(blipName, quadrants)
+        navigateToBlip(blipName, quadrants, contextVersionId)
       })
 
       // Add visual indicator that it's an internal link

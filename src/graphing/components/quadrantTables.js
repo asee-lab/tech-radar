@@ -3,6 +3,7 @@ const { graphConfig, getScale, uiConfig } = require('../config')
 const { stickQuadrantOnScroll } = require('./quadrants')
 const { removeAllSpaces } = require('../../util/stringUtil')
 const { setupInternalLinks } = require('../../util/internalLinks')
+const appState = require('../../util/appState')
 
 function fadeOutAllBlips() {
   d3.selectAll('g > a.blip-link').attr('opacity', 0.3)
@@ -44,6 +45,12 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       .attr('tabindex', -1)
       .on('click search-result-click', function (e) {
         e.stopPropagation()
+
+        if (appState.isManifestMode() && e.type === 'click') {
+          const { navigateToBlipDetail } = require('../blipDetail')
+          navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
+          return
+        }
 
         const expandFlag = d3.select(e.target.parentElement).classed('expand')
 
@@ -118,6 +125,13 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
   }
 
   const blipClick = function (e) {
+    if (appState.isManifestMode()) {
+      e.stopPropagation()
+      const { navigateToBlipDetail } = require('../blipDetail')
+      navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
+      return
+    }
+
     const isQuadrantView = d3.select('svg#radar-plot').classed('quadrant-view')
     const targetElement = e.target.classList.contains('blip-link') ? e.target : e.target.parentElement
     if (isQuadrantView) {

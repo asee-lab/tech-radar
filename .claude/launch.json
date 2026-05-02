@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "radar-local",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "env": {
+        "QUADRANTS": "[\"Patterns and Practices\",\"Runtime Infrastructure\",\"Tools\",\"Frameworks and libraries\"]"
+      },
+      "port": 8080,
+      "autoPort": false
+    }
+  ]
+}

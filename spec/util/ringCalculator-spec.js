@@ -8,19 +8,16 @@ describe('ringCalculator', function () {
     ringCalculator = new RingCalculator(ringLength, radarSize)
   })
 
-  it('sums up the sequences', function () {
-    expect(ringCalculator.sum(ringLength)).toEqual(16)
-  })
-
-  it('calculates the correct radius', function () {
-    expect(ringCalculator.getRadius(ringLength)).toEqual(radarSize)
-  })
-
   it('calculates the ring radius', function () {
-    expect(ringCalculator.getRingRadius(1)).toEqual(158)
+    // Adopt outer radius = 0.49 * 500 = 245
+    expect(ringCalculator.getRingRadius(1)).toEqual(245)
   })
 
   it('calculates the ring radius for invalid ring as 0', function () {
     expect(ringCalculator.getRingRadius(10)).toEqual(0)
+  })
+
+  it('exposes the canonical RING_RATIOS table', function () {
+    expect(RingCalculator.RING_RATIOS).toEqual([0, 0.49, 0.66, 0.83, 1.0])
   })
 })

@@ -1,0 +1,78 @@
+// Version selector — inline compact pills in the hero banner.
+// Use .alternative-radars.version-selector prefix to override legacy
+// .alternative-radars__list-item styles (same class still applied).
+.alternative-radars.version-selector {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 0 !important;
+  font-size: 12px;
+  flex-wrap: wrap;
+  width: auto !important;
+  max-width: none;
+
+  .alternative-radars__list,
+  .version-selector__list {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .alternative-radars__list-item,
+  .version-selector__item {
+    flex-grow: 0 !important;
+    flex-basis: auto !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+    text-align: left !important;
+
+    a {
+      display: inline-block;
+      width: auto !important;
+      margin: 0 !important;
+      padding: 3px 12px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(255, 255, 255, 0.45) !important;
+      color: #fff !important;
+      text-decoration: none;
+      background: transparent !important;
+      font-size: 12px !important;
+      line-height: 1.4 !important;
+      text-overflow: clip !important;
+      overflow: visible !important;
+      -webkit-line-clamp: unset !important;
+      transition: background 0.15s, border-color 0.15s;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.7) !important;
+      }
+    }
+
+    &.active a {
+      background: #fff !important;
+      color: #14293d !important;
+      border-color: #fff !important;
+      font-weight: 600;
+    }
+  }
+}
+
+.search-container__version-pill {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #ececec;
+  font-size: 10px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}

@@ -37,7 +37,13 @@ const graphConfig = {
   rings: getRings(),
   quadrants: getQuadrants(),
   groupBlipAngles: [30, 35, 60, 80],
-  maxBlipsInRings: [8, 22, 17, 18],
+  // Capacity headroom per ring before the radar collapses individual blips
+  // into a single grouped marker. Adopt was originally 8 when its radius
+  // ratio was 0.316; with Adopt now widened to 0.49 (Trial/Assess matched to
+  // Hold's 0.17 width) the inner ring has the most real estate, so it gets
+  // the highest cap. Trial and Assess share Hold's ring width and therefore
+  // the same headroom.
+  maxBlipsInRings: [22, 18, 18, 18],
 }
 
 const uiConfig = {

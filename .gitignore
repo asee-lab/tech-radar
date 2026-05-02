@@ -21,3 +21,6 @@ cypress/
 .talismanrc
 
 .vscode/
+
+# Visual QA output from scripts/verify-blip-placement.js
+.qa/

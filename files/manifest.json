@@ -1,0 +1,7 @@
+{
+  "current": "2026.04",
+  "versions": [
+    { "id": "2026.04", "label": "April 2026", "file": "radar-2026.04.csv", "date": "2026-04-01" },
+    { "id": "2025.10", "label": "October 2025", "file": "radar-2025.10.csv", "date": "2025-10-01" }
+  ]
+}
