@@ -476,7 +476,8 @@ function quadrantScrollHandler(
   radarLegendsContainer,
   radarLegendsWidth,
 ) {
-  const quadrantTableHeight = getElementHeight(selectedQuadrantTable)
+  const selectedQuadrantTableNode = selectedQuadrantTable.node()
+  const quadrantTableHeight = Math.max(selectedQuadrantTableNode.scrollHeight, getElementHeight(selectedQuadrantTable))
   const quadrantTableOffset = offset + quadrantTableHeight
 
   if (window.scrollY >= offset) {
@@ -535,15 +536,23 @@ function quadrantScrollHandler(
 }
 
 function stickQuadrantOnScroll() {
-  if (!scrollFlag) {
-    const scale = getScale()
+  const scale = getScale()
 
-    const radarContainer = d3.select('#radar')
-    const radarElement = d3.select('#radar-plot')
-    const selectedQuadrantTable = d3.select('.quadrant-table.selected')
+  const radarContainer = d3.select('#radar')
+  const radarElement = d3.select('#radar-plot')
+  const selectedQuadrantTable = d3.select('.quadrant-table.selected')
+  const radarHeight = quadrantHeight * scale + quadrantsGap * scale
+
+  if (selectedQuadrantTable.empty()) {
+    return
+  }
+
+  const quadrantTableHeight = getElementHeight(selectedQuadrantTable)
+  radarContainer.style('height', `${Math.max(quadrantTableHeight, radarHeight + uiConfig.legendsHeight)}px`)
+
+  if (!scrollFlag) {
     const radarLegendsContainer = d3.select('.radar-legends')
 
-    const radarHeight = quadrantHeight * scale + quadrantsGap * scale
     const offset = radarContainer.node().offsetTop - uiConfig.subnavHeight
     const radarWidth = radarContainer.node().getBoundingClientRect().width
     const selectedOrder = radarElement.attr('data-quadrant-selected')
@@ -568,10 +577,7 @@ function stickQuadrantOnScroll() {
       radarLegendsWidth,
     )
 
-    if (
-      uiConfig.subnavHeight + radarHeight + quadrantsGap * 2 + uiConfig.legendsHeight <
-      getElementHeight(selectedQuadrantTable)
-    ) {
+    if (uiConfig.subnavHeight + radarHeight + quadrantsGap * 2 + uiConfig.legendsHeight < quadrantTableHeight) {
       window.addEventListener('scroll', quadrantScrollHandlerReference)
       scrollFlag = true
     } else {

@@ -9,7 +9,7 @@ const { setupInternalLinks } = require('../util/internalLinks')
 const config = require('../config')
 const featureToggles = config().featureToggles
 const { plotRadarBlips } = require('./blips')
-const { graphConfig, getGraphSize } = require('./config')
+const { graphConfig, getGraphSize, uiConfig } = require('./config')
 
 const { renderBanner } = require('./components/banner')
 const { renderQuadrantSubnav } = require('./components/quadrantSubnav')
@@ -566,6 +566,7 @@ const Radar = function (size, radar) {
       .attr('transform', 'translate(0,0)')
 
     d3.select('#radar-plot').attr('width', size).attr('height', size)
+    d3.select('#radar').style('height', size + uiConfig.legendsHeight + 'px')
     d3.select(`svg#radar-plot`).style('padding', '0')
 
     const radarLegendsContainer = d3.select('.radar-legends')
