@@ -1,150 +1,96 @@
 # Custom Domain Setup for GitHub Pages
 
-## Scenario: Multiple Radars Under engineering.asee.io
+This repository is deployed to GitHub Pages at the root custom domain `radar.asee.dev`.
 
-This guide shows how to host multiple tech radars under the same custom domain using path-based routing.
-
-## Architecture
+## Current Architecture
 
 ```
-engineering.asee.io/              → Landing page (main repository)
-engineering.asee.io/tech-radar/   → Tech Radar (this repository)
-engineering.asee.io/platform/     → Platform Radar (separate repository)
+radar.asee.dev/                  -> Tech Radar from this repository
+radar.asee.dev/files/...         -> Manifest and radar CSV files
 ```
+
+The site is not currently configured as a path-based deployment under `engineering.asee.io/tech-radar/`.
 
 ## DNS Configuration
 
-### For the Main Domain
-
-Add these DNS records at your DNS provider:
+`radar.asee.dev` is a subdomain, so DNS should point it at the GitHub Pages host for the owning GitHub organization or user.
 
 ```
-Type    Name              Value
-CNAME   engineering       asee-lab.github.io.
+Type    Name     Value
+CNAME   radar    <github-pages-host>
 ```
 
-Or if using an apex domain:
+For example, if GitHub Pages is served from the `asee-lab` organization, the target is typically:
 
 ```
-Type    Name    Value
-A       @       185.199.108.153
-A       @       185.199.109.153
-A       @       185.199.110.153
-A       @       185.199.111.153
+radar.asee.dev -> asee-lab.github.io
 ```
 
 ## Repository Setup
 
-### Main Landing Page Repository (e.g., `engineering-landing`)
+GitHub Pages should be configured for this repository:
 
-1. **Create CNAME file** in the repository root:
-   ```
-   engineering.asee.io
-   ```
+1. Go to repository **Settings** -> **Pages**.
+2. Set the source to the `gh-pages` branch.
+3. Set the custom domain to `radar.asee.dev`.
+4. Enable **Enforce HTTPS** after GitHub verifies the domain.
 
-2. **GitHub Pages Settings:**
-   - Go to Settings → Pages
-   - Source: `main` branch (or `gh-pages`)
-   - Custom domain: `engineering.asee.io`
-   - Enable "Enforce HTTPS"
+The repository root contains a `CNAME` file with:
 
-3. **Deploy:** This becomes your landing page at `engineering.asee.io/`
-
-### Tech Radar Repository (this one: `tech-radar`)
-
-1. **No CNAME file needed** - it will be served at the path `/tech-radar/`
-
-2. **GitHub Pages Settings:**
-   - Go to Settings → Pages
-   - Source: `gh-pages` branch
-   - **No custom domain** (leave blank)
-
-3. **Deploy:**
-   ```bash
-   npm run deploy
-   ```
-
-4. **Access:** `engineering.asee.io/tech-radar/`
-
-### Additional Radars (e.g., `platform-radar`)
-
-Same as tech-radar:
-- No CNAME file
-- Deploy to `gh-pages` branch
-- Access at `engineering.asee.io/platform-radar/`
-
-## How It Works
-
-1. **DNS Resolution:**
-   - `engineering.asee.io` → GitHub Pages servers
-
-2. **GitHub Pages Routing:**
-   - `/` → served from the repository with the CNAME file
-   - `/tech-radar/` → served from `tech-radar` repository
-   - `/platform-radar/` → served from `platform-radar` repository
-
-3. **Path Preservation:**
-   - The `ASSET_PATH="/tech-radar/"` in `deploy-gh-pages.sh` ensures all assets (JS, CSS, images) load from the correct path
-
-## Testing
-
-### Before Custom Domain is Set Up
-
-Your radar would be available at the GitHub Pages default URL.
-
-### After Custom Domain is Set Up
-
-Your radar is available at:
 ```
-https://engineering.asee.io/tech-radar/
+radar.asee.dev
 ```
 
-**Both URLs will work!** GitHub Pages maintains the `.github.io` URL even with a custom domain.
+The deployment script copies this file into `dist/` before publishing, so the `gh-pages` branch keeps the custom domain configuration.
 
-## Deployment Checklist
+## Deployment
 
-- [ ] Configure DNS (CNAME or A records)
-- [ ] Set up main landing page repository with CNAME file
-- [ ] Deploy tech-radar: `npm run deploy`
-- [ ] Wait 5-10 minutes for DNS propagation
-- [ ] Enable HTTPS on main repository
-- [ ] Test: `https://engineering.asee.io/tech-radar/`
+Deploy with:
+
+```bash
+npm run deploy
+```
+
+This runs `deploy-gh-pages.sh`, which:
+
+1. Sets `ASSET_PATH="/"` for root-level asset URLs.
+2. Sets the custom quadrant names through the `QUADRANTS` build environment variable.
+3. Builds the production webpack bundle into `dist/`.
+4. Copies `files/manifest.json`, all `files/radar-*.csv` files, and optionally `files/README.md` into `dist/files/`.
+5. Copies `CNAME` into `dist/`.
+6. Creates `dist/.nojekyll`.
+7. Publishes `dist/` to the `gh-pages` branch with `npx gh-pages -d dist`.
+
+After GitHub Pages processes the new commit, the radar is available at:
+
+```
+https://radar.asee.dev/
+```
 
 ## Troubleshooting
 
-### Assets Not Loading (404s)
+### Assets Not Loading
 
-**Problem:** CSS/JS/images return 404 errors
+If CSS, JavaScript, or image files return 404s, verify that `deploy-gh-pages.sh` sets:
 
-**Solution:** Verify `ASSET_PATH="/tech-radar/"` is set in `deploy-gh-pages.sh`
+```bash
+export ASSET_PATH="/"
+```
 
-### Redirect Loop
-
-**Problem:** Page keeps redirecting
-
-**Solution:** Check the auto-redirect script matches your actual hostname
+This matches the current root-domain deployment at `radar.asee.dev`.
 
 ### Custom Domain Not Working
 
-**Problem:** Site doesn't load at custom domain
+If `radar.asee.dev` does not load:
 
-**Solution:**
-1. Verify DNS records are correct
-2. Check CNAME file exists in the main landing repository
-3. Wait 24 hours for DNS propagation
-4. Check GitHub Pages settings show "DNS check successful"
-
-No additional configuration needed - just deploy!
-
-## Note on Deployment Configuration
-
-This repository is configured to use the custom domain `radar.asee.dev` exclusively. The deployment script has been configured with:
-- `ASSET_PATH="/"` for root-level deployment
-- CNAME file automatically copied to enable custom domain
-- All asset paths configured for custom domain usage
+1. Verify the DNS CNAME points to the correct GitHub Pages host.
+2. Confirm the repository's GitHub Pages settings use the `gh-pages` branch.
+3. Confirm the custom domain is set to `radar.asee.dev`.
+4. Confirm the deployed `gh-pages` branch contains a `CNAME` file with `radar.asee.dev`.
+5. Wait for DNS and GitHub Pages certificate provisioning to complete.
 
 ## Security Notes
 
-- **Always enable HTTPS** in GitHub Pages settings
-- **HTTPS is automatic** for `.github.io` domains
-- **HTTPS requires DNS setup** for custom domains (usually takes 5-10 minutes)
+- Always enable **Enforce HTTPS** in GitHub Pages settings.
+- HTTPS certificate provisioning can take several minutes after DNS changes.
+

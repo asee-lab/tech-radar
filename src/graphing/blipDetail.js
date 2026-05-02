@@ -42,9 +42,21 @@ function formatPublishedDate(dateString, fallback) {
   }).format(date)
 }
 
+function scrollToTop() {
+  try {
+    window.scrollTo(0, 0)
+  } catch (_error) {
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+  }
+}
+
 function renderTimelineEntry(wrapper, entry, index) {
   const item = wrapper.append('div').attr('blip', 'blip').classed('cmp-blip-timeline__item', true)
-  item.append('div').classed('cmp-blip-timeline__item--time', true).text(entry.versionLabel || entry.versionId)
+  item
+    .append('div')
+    .classed('cmp-blip-timeline__item--time', true)
+    .text(entry.versionLabel || entry.versionId)
 
   const ring = item.append('div').classed('cmp-blip-timeline__item--ring', true)
   ring.append('span').text(` ${entry.ring.charAt(0).toUpperCase() + entry.ring.slice(1)}`)
@@ -93,7 +105,12 @@ function renderBlipDetail(blipName, versionId) {
     .append('div')
     .classed('cmp-blip-timeline__date--lastmodified', true)
     .append('span')
-    .text(`Last updated : ${formatPublishedDate(newestEntry.versionDate, newestEntry.versionLabel || newestEntry.versionId)}`)
+    .text(
+      `Last updated : ${formatPublishedDate(
+        newestEntry.versionDate,
+        newestEntry.versionLabel || newestEntry.versionId,
+      )}`,
+    )
 
   const wrapper = timelineRoot.append('div').classed('cmp-blip-timeline__wrapper blip-timeline-wrapper', true)
   entries.forEach((entry, index) => renderTimelineEntry(wrapper, entry, index))
@@ -103,15 +120,19 @@ function renderBlipDetail(blipName, versionId) {
     .append('div')
     .classed('cmp-blip-timeline__date--published', true)
     .append('span')
-    .text(`Published : ${formatPublishedDate(oldestEntry.versionDate, oldestEntry.versionLabel || oldestEntry.versionId)}`)
+    .text(
+      `Published : ${formatPublishedDate(oldestEntry.versionDate, oldestEntry.versionLabel || oldestEntry.versionId)}`,
+    )
 
   const relatedSection = container.append('section').classed('blip-detail__related', true)
   renderRelatedBlipsList(relatedSection, newestEntry.description, targetVersion, canonicalName)
+
+  scrollToTop()
 }
 
 function navigateToBlipDetail(blipName, versionId) {
   const effectiveVersion = versionId || appState.getCurrentVersionId()
-  const url = constructBlipDetailUrl(effectiveVersion, blipName)
+  const url = constructBlipDetailUrl(blipName)
   window.history.pushState({ type: 'blip', blipName, versionId: effectiveVersion }, '', url)
   renderBlipDetail(blipName, effectiveVersion)
 }

@@ -121,7 +121,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       .text(`${blip.blipText()}. ${blip.name()}`)
     blipItemContainer.append('span').classed('blip-list__item-container__name-arrow', true)
 
-    const description = blipItemDiv
+    blipItemDiv
       .append('div')
       .classed('blip-list__item-container__description', true)
       .attr('id', `blip-description-${blip.id()}`)
@@ -151,7 +151,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       history
         .append('a')
         .classed('ctaDefaultLink cmp__link-with-arrow', true)
-        .attr('href', constructBlipDetailUrl(appState.getCurrentVersionId(), blip.name()))
+        .attr('href', constructBlipDetailUrl(blip.name()))
         .attr('aria-label', 'View blip history')
         .on('click', function (event) {
           event.preventDefault()

@@ -22,8 +22,7 @@ describe('quadrantTables', () => {
     id: () => 1,
     name: () => 'Testcontainers',
     blipText: () => '7',
-    description: () =>
-      '<p>Use <a href="Kafka">Kafka</a> and <a href="https://example.com">external docs</a>.</p>',
+    description: () => '<p>Use <a href="Kafka">Kafka</a> and <a href="https://example.com">external docs</a>.</p>',
     groupIdInGraph: () => '',
     isGroup: () => false,
   }
@@ -91,7 +90,7 @@ describe('quadrantTables', () => {
     renderBlipDescription(blip, ring, quadrant, tip, null, [])
 
     const historyLink = document.querySelector('.cmp-blip-history a')
-    expect(historyLink.getAttribute('href')).toBe('/?version=2026.04&blip=Testcontainers')
+    expect(historyLink.getAttribute('href')).toBe('/?blip=Testcontainers')
 
     historyLink.dispatchEvent(new MouseEvent('click', { bubbles: true }))
     expect(navigateToBlipDetail).toHaveBeenCalledWith('Testcontainers', '2026.04')

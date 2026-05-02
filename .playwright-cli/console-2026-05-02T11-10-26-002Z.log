@@ -644,3 +644,897 @@ Update propagation: ./src/graphing/components/quadrants.js -> ./src/graphing/rad
 [   56267ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:3267
 [   56267ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:3267
 [   56267ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:3267
+[  755806ms] [INFO] [webpack-dev-server] App updated. Recompiling... @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:51138
+[  756098ms] [INFO] [webpack-dev-server] App hot update... @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:51138
+[  756099ms] [LOG] [HMR] Checking for updates on the server... @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:52726
+[  756146ms] [WARNING] [HMR] Cannot apply update. Need to do a full reload! @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:52728
+[  756146ms] [WARNING] [HMR] Error: Aborted because ./src/graphing/components/quadrants.js is not accepted
+Update propagation: ./src/graphing/components/quadrants.js -> ./src/graphing/radar.js -> ./src/util/factory.js -> ./src/site.js
+    at applyHandler (http://localhost:8080/main.edc7ed8961d36f9089bd.js:88247:31)
+    at http://localhost:8080/main.edc7ed8961d36f9089bd.js:87869:21
+    at Array.map (<anonymous>)
+    at internalApply (http://localhost:8080/main.edc7ed8961d36f9089bd.js:87868:54)
+    at http://localhost:8080/main.edc7ed8961d36f9089bd.js:87838:26
+    at waitForBlockingPromises (http://localhost:8080/main.edc7ed8961d36f9089bd.js:87792:48)
+    at http://localhost:8080/main.edc7ed8961d36f9089bd.js:87836:24 @ http://localhost:8080/main.edc7ed8961d36f9089bd.js:52728
+[  756353ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://rsms.me/inter/inter.css' with computed SHA-512 integrity '5ekcuDo8ROiT32u8Hw9LK773RO+a5y3W8/YViHJlefd7azQ5YY8MbGHisKE6BY+4Pd87qRbw5Ix5CkV4l+9Mtg=='. The resource has been blocked. @ http://localhost:8080/:7
+[  756700ms] [INFO] [webpack-dev-server] Server started: Hot Module Replacement enabled, Live Reloading enabled, Progress disabled, Overlay enabled. @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:51158
+[  756703ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:52746
+[  756745ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:2043
+[  756776ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:2043
+[  756922ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756922ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756923ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756924ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756925ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756926ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756927ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756928ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  756929ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:3287
+[  760748ms] [INFO] [webpack-dev-server] App updated. Recompiling... @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:51158
+[  760954ms] [INFO] [webpack-dev-server] App hot update... @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:51158
+[  760954ms] [LOG] [HMR] Checking for updates on the server... @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:52746
+[  760984ms] [WARNING] [HMR] Cannot apply update. Need to do a full reload! @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:52748
+[  760984ms] [WARNING] [HMR] Error: Aborted because ./src/graphing/components/quadrants.js is not accepted
+Update propagation: ./src/graphing/components/quadrants.js -> ./src/graphing/radar.js -> ./src/util/factory.js -> ./src/site.js
+    at applyHandler (http://localhost:8080/main.3cdffa14fc13b98d5367.js:88267:31)
+    at http://localhost:8080/main.3cdffa14fc13b98d5367.js:87889:21
+    at Array.map (<anonymous>)
+    at internalApply (http://localhost:8080/main.3cdffa14fc13b98d5367.js:87888:54)
+    at http://localhost:8080/main.3cdffa14fc13b98d5367.js:87858:26
+    at waitForBlockingPromises (http://localhost:8080/main.3cdffa14fc13b98d5367.js:87812:48)
+    at http://localhost:8080/main.3cdffa14fc13b98d5367.js:87856:24 @ http://localhost:8080/main.3cdffa14fc13b98d5367.js:52748
+[  761086ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://rsms.me/inter/inter.css' with computed SHA-512 integrity '5ekcuDo8ROiT32u8Hw9LK773RO+a5y3W8/YViHJlefd7azQ5YY8MbGHisKE6BY+4Pd87qRbw5Ix5CkV4l+9Mtg=='. The resource has been blocked. @ http://localhost:8080/:7
+[  761402ms] [INFO] [webpack-dev-server] Server started: Hot Module Replacement enabled, Live Reloading enabled, Progress disabled, Overlay enabled. @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:51158
+[  761402ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:52746
+[  761415ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:2043
+[  761430ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:2043
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761565ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761566ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761567ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761568ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761569ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761570ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761571ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761572ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  761573ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:3287
+[  763165ms] [INFO] [webpack-dev-server] App updated. Recompiling... @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:51158
+[  763421ms] [INFO] [webpack-dev-server] App hot update... @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:51158
+[  763421ms] [LOG] [HMR] Checking for updates on the server... @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:52746
+[  763437ms] [WARNING] [HMR] Cannot apply update. Need to do a full reload! @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:52748
+[  763437ms] [WARNING] [HMR] Error: Aborted because ./src/graphing/radar.js is not accepted
+Update propagation: ./src/graphing/radar.js -> ./src/util/factory.js -> ./src/site.js
+    at applyHandler (http://localhost:8080/main.aed5ae91d20d9c3f909e.js:88267:31)
+    at http://localhost:8080/main.aed5ae91d20d9c3f909e.js:87889:21
+    at Array.map (<anonymous>)
+    at internalApply (http://localhost:8080/main.aed5ae91d20d9c3f909e.js:87888:54)
+    at http://localhost:8080/main.aed5ae91d20d9c3f909e.js:87858:26
+    at waitForBlockingPromises (http://localhost:8080/main.aed5ae91d20d9c3f909e.js:87812:48)
+    at http://localhost:8080/main.aed5ae91d20d9c3f909e.js:87856:24 @ http://localhost:8080/main.aed5ae91d20d9c3f909e.js:52748
+[  763516ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://rsms.me/inter/inter.css' with computed SHA-512 integrity '5ekcuDo8ROiT32u8Hw9LK773RO+a5y3W8/YViHJlefd7azQ5YY8MbGHisKE6BY+4Pd87qRbw5Ix5CkV4l+9Mtg=='. The resource has been blocked. @ http://localhost:8080/:7
+[  763711ms] [INFO] [webpack-dev-server] Server started: Hot Module Replacement enabled, Live Reloading enabled, Progress disabled, Overlay enabled. @ http://localhost:8080/main.fd41defbed907df9d8ab.js:51138
+[  763712ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:8080/main.fd41defbed907df9d8ab.js:52726
+[  763724ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.fd41defbed907df9d8ab.js:2026
+[  763741ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.fd41defbed907df9d8ab.js:2026
+[  763827ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763827ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763828ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763829ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763830ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763831ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763832ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763833ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763834ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  763835ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.fd41defbed907df9d8ab.js:3267
+[  776584ms] [INFO] [webpack-dev-server] App updated. Recompiling... @ http://localhost:8080/main.fd41defbed907df9d8ab.js:51138
+[  779599ms] [INFO] [webpack-dev-server] App hot update... @ http://localhost:8080/main.fd41defbed907df9d8ab.js:51138
+[  779600ms] [LOG] [HMR] Checking for updates on the server... @ http://localhost:8080/main.fd41defbed907df9d8ab.js:52726
+[  779610ms] [INFO] [webpack-dev-server] App updated. Recompiling... @ http://localhost:8080/main.fd41defbed907df9d8ab.js:51138
+[  779739ms] [INFO] [webpack-dev-server] App hot update... @ http://localhost:8080/main.fd41defbed907df9d8ab.js:51138
+[  779750ms] [LOG] [HMR] Updated modules: @ http://localhost:8080/main.fd41defbed907df9d8ab.js:52726
+[  779750ms] [LOG] [HMR]  - ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[4]!./src/stylesheets/base.scss @ http://localhost:8080/main.fd41defbed907df9d8ab.js:52726
+[  779754ms] [WARNING] [HMR] Cannot apply update. Need to do a full reload! @ http://localhost:8080/main.fd41defbed907df9d8ab.js:52728
+[  779754ms] [WARNING] [HMR] Error: Aborted because ./src/graphing/config.js is not accepted
+Update propagation: ./src/graphing/config.js -> ./src/util/factory.js -> ./src/site.js
+    at applyHandler (http://localhost:8080/main.fd41defbed907df9d8ab.js:88247:31)
+    at http://localhost:8080/main.fd41defbed907df9d8ab.js:87869:21
+    at Array.map (<anonymous>)
+    at internalApply (http://localhost:8080/main.fd41defbed907df9d8ab.js:87868:54)
+    at http://localhost:8080/main.fd41defbed907df9d8ab.js:87838:26
+    at waitForBlockingPromises (http://localhost:8080/main.fd41defbed907df9d8ab.js:87792:48)
+    at http://localhost:8080/main.fd41defbed907df9d8ab.js:87836:24 @ http://localhost:8080/main.fd41defbed907df9d8ab.js:52728
+[  779801ms] [LOG] [HMR] Detected local css modules. Reload all css @ http://localhost:8080/main.fd41defbed907df9d8ab.js:40352
+[  779864ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://rsms.me/inter/inter.css?1777721005803' with computed SHA-512 integrity '5ekcuDo8ROiT32u8Hw9LK773RO+a5y3W8/YViHJlefd7azQ5YY8MbGHisKE6BY+4Pd87qRbw5Ix5CkV4l+9Mtg=='. The resource has been blocked. @ http://localhost:8080/:0
+[  779886ms] [ERROR] Failed to find a valid digest in the 'integrity' attribute for resource 'https://rsms.me/inter/inter.css' with computed SHA-512 integrity '5ekcuDo8ROiT32u8Hw9LK773RO+a5y3W8/YViHJlefd7azQ5YY8MbGHisKE6BY+4Pd87qRbw5Ix5CkV4l+9Mtg=='. The resource has been blocked. @ http://localhost:8080/:7
+[  780125ms] [INFO] [webpack-dev-server] Server started: Hot Module Replacement enabled, Live Reloading enabled, Progress disabled, Overlay enabled. @ http://localhost:8080/main.b481156a01ef6e1435b5.js:51138
+[  780126ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:8080/main.b481156a01ef6e1435b5.js:52726
+[  780137ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.b481156a01ef6e1435b5.js:2026
+[  780152ms] [LOG] 🎯 Configured quadrants: [Patterns and Practices, Runtime Infrastructure, Tools, Frameworks and libraries] @ http://localhost:8080/main.b481156a01ef6e1435b5.js:2026
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780190ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Frameworks and libraries, normalized: frameworks & libraries, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780191ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780192ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Patterns and Practices, normalized: patterns & practices, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780193ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780194ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Runtime Infrastructure, normalized: runtime infrastructure, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780195ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: adopt, normalized: adopt, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: trial, normalized: trial, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780196ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: assess, normalized: assess, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: Tools, normalized: tools, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267
+[  780197ms] [LOG] 🔍 Matching: {input: hold, normalized: hold, available: Array(4), availableNormalized: Array(4)} @ http://localhost:8080/main.b481156a01ef6e1435b5.js:3267

@@ -1,5 +1,3 @@
-const d3 = require('d3')
-
 const appState = require('./appState')
 const { constructBlipDetailUrl } = require('./urlUtils')
 
@@ -70,7 +68,7 @@ function renderRelatedBlipsList(parentSelection, descriptionHtml, contextVersion
     const link = item
       .append('a')
       .classed('related-blip-item__href', true)
-      .attr('href', constructBlipDetailUrl(relatedBlip.versionId, relatedBlip.name))
+      .attr('href', constructBlipDetailUrl(relatedBlip.name))
       .attr(
         'aria-label',
         `${relatedBlip.name},Quadrant ${relatedBlip.quadrant}, Ring ${relatedBlip.ring}, ${relatedBlip.versionLabel} volume`,
@@ -82,14 +80,12 @@ function renderRelatedBlipsList(parentSelection, descriptionHtml, contextVersion
       })
 
     link.append('div').classed('blip-name', true).attr('data-blip-name', relatedBlip.name).text(relatedBlip.name)
-    link
-      .append('div')
-      .classed('blip-ring', true)
-      .attr('data-ring-name', relatedBlip.ring)
-      .text(relatedBlip.ring)
+    link.append('div').classed('blip-ring', true).attr('data-ring-name', relatedBlip.ring).text(relatedBlip.ring)
 
     const hoverInfo = link.append('div').classed('blip-hover-info', true)
-    hoverInfo.append('span').classed(`blip-icon ${relatedBlip.quadrant.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`, true)
+    hoverInfo
+      .append('span')
+      .classed(`blip-icon ${relatedBlip.quadrant.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`, true)
     hoverInfo
       .append('span')
       .classed('blip-quadrant', true)

@@ -15,7 +15,6 @@ const { renderBanner } = require('./components/banner')
 const { renderQuadrantSubnav } = require('./components/quadrantSubnav')
 const { renderSearch } = require('./components/search')
 const { renderAlternativeRadars } = require('./components/alternativeRadars')
-const { renderButtons } = require('./components/buttons')
 const {
   renderRadarQuadrants,
   renderMobileView,
@@ -787,7 +786,6 @@ const Radar = function (size, radar) {
       renderSearch(radarHeader, quadrants)
       renderAlternativeRadars(radarFooter, alternatives, currentSheet)
       renderQuadrantTables(quadrants, rings)
-      renderButtons(radarFooter)
 
       const landingPageElements = document.querySelectorAll('main .home-page')
       landingPageElements.forEach((elem) => {

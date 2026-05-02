@@ -406,11 +406,19 @@
       top: calc($quadrantWidth * 2 + $quadrantsGap);
     }
 
+    &__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(100%, 720px);
+    }
+
     &__status {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 12px;
     }
 
@@ -419,6 +427,17 @@
       align-items: center;
       gap: 8px;
       font-size: 0.95rem;
+    }
+
+    &__print-button {
+      flex: 0 0 auto;
+      border: none;
+      background-color: $wave;
+      color: $white;
+      cursor: pointer;
+      font-size: 0.95rem;
+      height: 40px;
+      padding: 0 18px;
     }
 
     &__ring-guide {
@@ -449,11 +468,6 @@
       font-size: 0.95rem;
       line-height: 1.5;
       color: $black;
-    }
-
-    .ring-tooltip--text {
-      left: 0;
-      top: calc(100% + 8px);
     }
 
     img {

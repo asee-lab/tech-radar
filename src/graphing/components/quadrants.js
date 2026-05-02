@@ -3,7 +3,7 @@ const { getElementWidth, getElementHeight, decodeHTML } = require('../../util/ht
 const { toRadian } = require('../../util/mathUtils')
 const { getRingIdString } = require('../../util/stringUtil')
 const { graphConfig } = require('../config')
-const { renderRingTooltip } = require('../../util/ringTooltips')
+const { getRingHelpText } = require('../../util/ringTooltips')
 const {
   getGraphSize,
   getScaledQuadrantWidth,
@@ -394,50 +394,42 @@ function renderRadarQuadrants(size, svg, quadrant, rings, ringCalculator, tip) {
 function renderRadarLegends(radarElement, hasMovements) {
   const legendsContainer = radarElement.append('div').classed('radar-legends', true)
 
-  const newImage = legendsContainer
-    .append('img')
-    .attr('src', '/images/new.svg')
-    .attr('width', '37px')
-    .attr('height', '37px')
-    .attr('alt', 'new blip legend icon')
-    .node().outerHTML
+  const legendRow = legendsContainer.append('div').classed('radar-legends__row', true)
+  const statusLegend = legendRow.append('div').classed('radar-legends__status', true)
+  const legendItems = hasMovements
+    ? [
+        { src: '/images/new.svg', alt: 'new blip legend icon', label: 'New' },
+        { src: '/images/moved.svg', alt: 'moved in or out blip legend icon', label: 'Moved in/out' },
+        { src: '/images/no-change.svg', alt: 'no change blip legend icon', label: 'No change' },
+      ]
+    : [
+        { src: '/images/new.svg', alt: 'new blip legend icon', label: 'New' },
+        { src: '/images/existing.svg', alt: 'existing blip legend icon', label: 'Existing' },
+      ]
 
-  const movedImage = legendsContainer
-    .append('img')
-    .attr('src', '/images/moved.svg')
-    .attr('width', '37px')
-    .attr('height', '37px')
-    .attr('alt', `moved in or out blip legend icon`)
-    .node().outerHTML
+  legendItems.forEach((legendItem) => {
+    const item = statusLegend.append('span').classed('radar-legends__status-item', true)
+    item
+      .append('img')
+      .attr('src', legendItem.src)
+      .attr('width', '37px')
+      .attr('height', '37px')
+      .attr('alt', legendItem.alt)
+    item.append('span').text(legendItem.label)
+  })
 
-  const existingImage = legendsContainer
-    .append('img')
-    .attr('src', '/images/existing.svg')
-    .attr('width', '37px')
-    .attr('height', '37px')
-    .attr('alt', 'existing blip legend icon')
-    .node().outerHTML
-
-  const noChangeImage = legendsContainer
-    .append('img')
-    .attr('src', '/images/no-change.svg')
-    .attr('width', '37px')
-    .attr('height', '37px')
-    .attr('alt', 'no change blip legend icon')
-    .node().outerHTML
-
-  if (hasMovements) {
-    legendsContainer.html(`${newImage} New ${movedImage} Moved in/out ${noChangeImage} No change`)
-  } else {
-    legendsContainer.html(`${newImage} New ${existingImage} Existing`)
-  }
+  legendRow
+    .append('button')
+    .classed('radar-legends__print-button', true)
+    .text('Print this radar')
+    .on('click', window.print.bind(window))
 
   const ringGuide = legendsContainer.append('dl').classed('radar-legends__ring-guide', true)
-  graphConfig.rings.forEach((ringName, index) => {
+  graphConfig.rings.forEach((ringName) => {
     const item = ringGuide.append('div').classed('radar-legends__ring-guide-item', true)
     const term = item.append('dt').classed('radar-legends__ring-guide-term', true)
     term.append('span').classed('radar-legends__ring-guide-label', true).text(ringName)
-    renderRingTooltip(term, ringName, `legend-${index}`)
+    item.append('dd').classed('radar-legends__ring-guide-desc', true).text(getRingHelpText(ringName))
   })
 }
 

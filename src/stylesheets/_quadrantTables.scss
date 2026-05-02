@@ -19,6 +19,7 @@
       align-items: center;
       gap: 8px;
       flex-wrap: wrap;
+      overflow: visible;
     }
 
     &__ring-name-label {
@@ -93,11 +94,14 @@
             pointer-events: none;
             display: inline-block;
             width: 90%;
-            font-size: 1rem;
-            font-family: $baseFontFamily;
+            font-family: 'Bitter', $baseFontFamily;
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: $black;
 
             @include media-query-large {
-              font-size: 1.125rem;
+              font-size: 1.25rem;
             }
           }
 
@@ -134,10 +138,19 @@
             margin: 0 0 1em !important;
           }
 
+          a {
+            color: $link-normal;
+            font-weight: inherit;
+            text-underline-offset: 0.12em;
+            text-decoration-thickness: 1px;
+
+            &:hover {
+              color: $link-hover;
+            }
+          }
+
           a.pop-out {
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
+            display: inline;
           }
 
           a.pop-out::after {
@@ -146,6 +159,7 @@
             width: 0.8em;
             height: 0.8em;
             margin-left: 0.3em;
+            vertical-align: -0.05em;
             background: url('/images/popout.svg') no-repeat center / contain;
           }
         }
@@ -281,7 +295,6 @@
     margin-top: 6px;
     font-weight: 700;
   }
-
 }
 
 .ring-tooltip--help {
@@ -294,6 +307,8 @@
 .ring-tooltip--icon {
   width: 20px;
   height: 20px;
+  display: block;
+  overflow: visible;
 }
 
 .ring-tooltip--text {
@@ -309,10 +324,9 @@
   font-size: 0.8rem;
   line-height: 1.5;
   z-index: 15;
+  pointer-events: none;
 }
 
-.ring-tooltip--help:hover + .ring-tooltip--text,
-.ring-tooltip--help:focus + .ring-tooltip--text,
-.ring-tooltip--help:focus-within + .ring-tooltip--text {
+.ring-tooltip--help:hover + .ring-tooltip--text {
   display: block;
 }

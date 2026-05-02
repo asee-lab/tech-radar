@@ -39,9 +39,9 @@ function constructVersionUrl(versionId) {
   return `${base}?version=${encodeURIComponent(versionId)}`
 }
 
-function constructBlipDetailUrl(versionId, blipName) {
+function constructBlipDetailUrl(blipName) {
   const base = window.location.pathname
-  return `${base}?version=${encodeURIComponent(versionId)}&blip=${encodeURIComponent(blipName)}`
+  return `${base}?blip=${encodeURIComponent(blipName)}`
 }
 
 module.exports = {

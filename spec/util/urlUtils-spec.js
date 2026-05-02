@@ -1,4 +1,9 @@
-const { constructSheetUrl, getDocumentOrSheetId, getSheetName } = require('../../src/util/urlUtils')
+const {
+  constructSheetUrl,
+  getDocumentOrSheetId,
+  getSheetName,
+  constructBlipDetailUrl,
+} = require('../../src/util/urlUtils')
 const queryParams = require('../../src/util/queryParamProcessor')
 
 jest.mock('../../src/util/queryParamProcessor')
@@ -73,5 +78,13 @@ describe('Url Utils', () => {
     const sheetName = getSheetName()
 
     expect(sheetName).toEqual('sheetName')
+  })
+
+  it('constructs blip detail urls without publication version', () => {
+    delete window.location
+    window.location = Object.create(window)
+    window.location.pathname = '/radar'
+
+    expect(constructBlipDetailUrl('Testcontainers')).toEqual('/radar?blip=Testcontainers')
   })
 })

@@ -51,7 +51,7 @@ const uiConfig = {
   bannerHeight: 200,
   tabletBannerHeight: 300,
   headerHeight: 80,
-  legendsHeight: 42,
+  legendsHeight: 320,
   tabletViewWidth: 1280,
   mobileViewWidth: 768,
 }

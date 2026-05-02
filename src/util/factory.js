@@ -21,7 +21,7 @@ const ExceptionMessages = require('./exceptionMessages')
 const GoogleAuth = require('./googleAuth')
 const config = require('../config')
 const featureToggles = config().featureToggles
-const { getDocumentOrSheetId, getSheetName, getVersion, getBlipParam, constructVersionUrl } = require('./urlUtils')
+const { getDocumentOrSheetId, getSheetName, getVersion, getBlipParam } = require('./urlUtils')
 const appState = require('./appState')
 const { renderBlipDetail, showRadarView } = require('../graphing/blipDetail')
 const { getGraphSize, graphConfig, isValidConfig } = require('../graphing/config')
@@ -332,9 +332,7 @@ const ManifestDocument = function (manifestUrl) {
         }
         const baseDir = manifestUrl.replace(/[^/]*$/, '')
         return Promise.all(
-          manifest.versions.map((v) =>
-            d3.csv(baseDir + v.file).then((rows) => ({ version: v, rows })),
-          ),
+          manifest.versions.map((v) => d3.csv(baseDir + v.file).then((rows) => ({ version: v, rows }))),
         ).then((loaded) => ({ manifest, loaded }))
       })
       .then(({ manifest, loaded }) => {
@@ -407,13 +405,14 @@ const ManifestDocument = function (manifestUrl) {
           renderRadarForVersion(currentVersionId, manifest)
         }
 
-        window.addEventListener('popstate', () => {
+        window.addEventListener('popstate', (event) => {
           const vid = getVersion() || manifest.current || orderedIds[0]
           const bp = getBlipParam()
           const previousVid = appState.getCurrentVersionId()
           if (bp) {
-            appState.setCurrentVersionId(vid)
-            renderBlipDetail(bp, vid)
+            const detailContextVersion = event.state?.versionId || vid
+            appState.setCurrentVersionId(detailContextVersion)
+            renderBlipDetail(bp, detailContextVersion)
           } else {
             const currentlyShowingDetail = document.querySelector('main .blip-detail')
             if (currentlyShowingDetail) {

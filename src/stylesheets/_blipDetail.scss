@@ -82,11 +82,7 @@
 
         a {
           color: #005fc1;
-          font-weight: 500;
-
-          &.pop-out {
-            font-weight: 700;
-          }
+          font-weight: inherit;
 
           &.pop-out::after {
             content: '';
