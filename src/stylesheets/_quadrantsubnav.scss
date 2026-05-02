@@ -87,7 +87,6 @@
         font-size: 16px;
 
         @include media-query-xlarge {
-          max-width: 20% !important;
           &.active-item {
             padding-top: 4px;
             border-bottom: 4px solid transparent;
@@ -96,22 +95,26 @@
             transition: font-weight 0.3s ease-in-out;
 
             &:nth-child(1) {
-              border-color: $mist-s30;
+              border-color: $flamingo;
             }
 
             &:nth-child(2) {
-              border-color: $sapphire;
+              border-color: $mist-s30;
             }
 
             &:nth-child(3) {
-              border-color: $turmeric;
+              border-color: $sapphire;
             }
 
             &:nth-child(4) {
-              border-color: $jade;
+              border-color: $turmeric;
             }
 
             &:nth-child(5) {
+              border-color: $jade;
+            }
+
+            &:nth-child(6) {
               border-color: $flamingo;
             }
           }
@@ -128,8 +131,6 @@
             padding: 15px 40px;
             margin: 0 1px;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
           }
         }
       }

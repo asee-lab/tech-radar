@@ -1,9 +1,76 @@
 const d3 = require('d3')
 const { graphConfig, getScale, uiConfig } = require('../config')
-const { stickQuadrantOnScroll } = require('./quadrants')
+const { selectRadarQuadrant, stickQuadrantOnScroll } = require('./quadrants')
 const { removeAllSpaces } = require('../../util/stringUtil')
-const { setupInternalLinks } = require('../../util/internalLinks')
+const { enrichDescriptionLinks } = require('../../util/internalLinks')
 const appState = require('../../util/appState')
+const { renderRelatedBlipsList } = require('../../util/relatedBlips')
+const { constructBlipDetailUrl } = require('../../util/urlUtils')
+const { renderRingTooltip } = require('../../util/ringTooltips')
+
+const SELECT_QUADRANT_ANIMATION_DELAY = 1500
+
+function collapseExpandedBlips() {
+  d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
+  d3.selectAll('.blip-list__item-container__description.expanded').classed('expanded', false)
+  d3.selectAll('.blip-list__item-container__name').attr('aria-expanded', 'false')
+  d3.selectAll('.read-more-btn').classed('expanded', false).select('span').text('Read more')
+}
+
+function expandBlipContainer(blipItemDiv, description, readMoreButton) {
+  collapseExpandedBlips()
+  blipItemDiv.classed('expand', true)
+  description.classed('expanded', true)
+  blipItemDiv.select('.blip-list__item-container__name').attr('aria-expanded', 'true')
+  readMoreButton.classed('expanded', true).select('span').text('Show less')
+}
+
+function toggleBlipExpansion(blipItemDiv) {
+  const description = blipItemDiv.select('.blip-list__item-container__description')
+  const readMoreButton = blipItemDiv.select('.read-more-btn')
+  const shouldExpand = !description.classed('expanded')
+
+  if (shouldExpand) {
+    expandBlipContainer(blipItemDiv, description, readMoreButton)
+  } else {
+    collapseExpandedBlips()
+  }
+
+  const isQuadrantView = d3.select('svg#radar-plot').classed('quadrant-view')
+  if (isQuadrantView && window.innerWidth >= uiConfig.tabletViewWidth) {
+    stickQuadrantOnScroll()
+  }
+}
+
+function findBlipListContainer(blipId) {
+  let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"]`)
+  if (selectedBlipContainer.empty()) {
+    selectedBlipContainer = d3.select(`.blip-list__item-container[data-group-id="${blipId}"]`)
+  }
+  return selectedBlipContainer
+}
+
+function expandAndScrollToBlip(blipId, delay = 0) {
+  setTimeout(() => {
+    const selectedBlipContainer = findBlipListContainer(blipId)
+    if (selectedBlipContainer.empty()) return
+
+    expandBlipContainer(
+      selectedBlipContainer,
+      selectedBlipContainer.select('.blip-list__item-container__description'),
+      selectedBlipContainer.select('.read-more-btn'),
+    )
+
+    if (window.innerWidth >= uiConfig.tabletViewWidth) {
+      stickQuadrantOnScroll()
+    }
+
+    selectedBlipContainer.select('button.blip-list__item-container__name').node()?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+  }, delay)
+}
 
 function fadeOutAllBlips() {
   d3.selectAll('g > a.blip-link').attr('opacity', 0.3)
@@ -19,7 +86,7 @@ function highlightBlipInTable(selectedBlip) {
 
 function highlightBlipInGraph(blipIdToFocus) {
   fadeOutAllBlips()
-  const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}'`)
+  const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}']`)
   fadeInSelectedBlip(selectedBlipOnGraph)
 }
 
@@ -45,24 +112,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       .attr('tabindex', -1)
       .on('click search-result-click', function (e) {
         e.stopPropagation()
-
-        if (appState.isManifestMode() && e.type === 'click') {
-          const { navigateToBlipDetail } = require('../blipDetail')
-          navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
-          return
-        }
-
-        const expandFlag = d3.select(e.target.parentElement).classed('expand')
-
-        d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
-        d3.select(e.target.parentElement).classed('expand', !expandFlag)
-
-        d3.selectAll('.blip-list__item-container__name').attr('aria-expanded', 'false')
-        d3.select('.blip-list__item-container.expand .blip-list__item-container__name').attr('aria-expanded', 'true')
-
-        if (window.innerWidth >= uiConfig.tabletViewWidth) {
-          stickQuadrantOnScroll()
-        }
+        toggleBlipExpansion(blipItemDiv)
       })
 
     blipItemContainer
@@ -77,12 +127,44 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
       .attr('id', `blip-description-${blip.id()}`)
       .html(blip.description())
 
-    // Set up internal links in the description
+    const readMoreButton = blipItemDiv
+      .append('button')
+      .classed('read-more-btn', true)
+      .attr('type', 'button')
+      .attr('aria-controls', `blip-description-${blip.id()}`)
+      .attr('aria-label', `Read more about ${blip.name()}`)
+      .on('click', function (e) {
+        e.stopPropagation()
+        toggleBlipExpansion(blipItemDiv)
+      })
+    readMoreButton.append('span').text('Read more')
+
     if (blip.description() && quadrants) {
       const descriptionElement = document.getElementById(`blip-description-${blip.id()}`)
       if (descriptionElement) {
-        setupInternalLinks(descriptionElement, quadrants)
+        enrichDescriptionLinks(descriptionElement, quadrants, appState.getCurrentVersionId())
       }
+    }
+
+    if (appState.isManifestMode()) {
+      const history = blipItemDiv.append('div').classed('cmp-blip-history', true)
+      history
+        .append('a')
+        .classed('ctaDefaultLink cmp__link-with-arrow', true)
+        .attr('href', constructBlipDetailUrl(blip.slug() || blip.name()))
+        .attr('aria-label', 'View blip history')
+        .on('click', function (event) {
+          event.preventDefault()
+          event.stopPropagation()
+          const { navigateToBlipDetail } = require('../blipDetail')
+          navigateToBlipDetail(blip.slug() || blip.name(), appState.getCurrentVersionId())
+        })
+        .append('span')
+        .classed('cta-name', true)
+        .text('View blip history')
+      history.select('a').append('span').classed('cta-arrow', true)
+
+      renderRelatedBlipsList(blipItemDiv, blip.description(), appState.getCurrentVersionId(), blip.name())
     }
   }
   const blipGraphItem = d3.select(`g a#blip-link-${removeAllSpaces(blip.id())}`)
@@ -91,7 +173,7 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
     const isGroupIdInGraph = !targetElement.classList.contains('blip-link') ? true : false
     const blipWrapper = d3.select(targetElement)
     const blipIdToFocus = blip.groupIdInGraph() ? blipWrapper.attr('data-group-id') : blipWrapper.attr('data-blip-id')
-    const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}'`)
+    const selectedBlipOnGraph = d3.select(`g > a.blip-link[data-blip-id='${blipIdToFocus}']`)
     highlightBlipInGraph(blipIdToFocus)
     highlightBlipInTable(blipTableItem)
 
@@ -125,44 +207,29 @@ function renderBlipDescription(blip, ring, quadrant, tip, groupBlipTooltipText, 
   }
 
   const blipClick = function (e) {
+    const isQuadrantView = d3.select('svg#radar-plot').classed('quadrant-view')
+    const targetElement = e.target.classList.contains('blip-link') ? e.target : e.target.parentElement
+    const blipId = d3.select(targetElement).attr('data-blip-id')
+
     if (appState.isManifestMode()) {
       e.stopPropagation()
-      const { navigateToBlipDetail } = require('../blipDetail')
-      navigateToBlipDetail(blip.name(), appState.getCurrentVersionId())
+      highlightBlipInGraph(blipId)
+
+      if (!isQuadrantView) {
+        selectRadarQuadrant(quadrant.order, quadrant.startAngle, quadrant.quadrant.name())
+      }
+
+      expandAndScrollToBlip(blipId, isQuadrantView ? 0 : SELECT_QUADRANT_ANIMATION_DELAY)
       return
     }
 
-    const isQuadrantView = d3.select('svg#radar-plot').classed('quadrant-view')
-    const targetElement = e.target.classList.contains('blip-link') ? e.target : e.target.parentElement
     if (isQuadrantView) {
       e.stopPropagation()
     }
 
-    const blipId = d3.select(targetElement).attr('data-blip-id')
     highlightBlipInGraph(blipId)
 
-    d3.selectAll('.blip-list__item-container.expand').classed('expand', false)
-
-    let selectedBlipContainer = d3.select(`.blip-list__item-container[data-blip-id="${blipId}"`)
-    selectedBlipContainer.classed('expand', true)
-
-    setTimeout(
-      () => {
-        if (window.innerWidth >= uiConfig.tabletViewWidth) {
-          stickQuadrantOnScroll()
-        }
-
-        const isGroupBlip = isNaN(parseInt(blipId))
-        if (isGroupBlip) {
-          selectedBlipContainer = d3.select(`.blip-list__item-container[data-group-id="${blipId}"`)
-        }
-        const elementToFocus = selectedBlipContainer.select('button.blip-list__item-container__name')
-        elementToFocus.node()?.scrollIntoView({
-          behavior: 'smooth',
-        })
-      },
-      isQuadrantView ? 0 : 1500,
-    )
+    expandAndScrollToBlip(blipId, isQuadrantView ? 0 : SELECT_QUADRANT_ANIMATION_DELAY)
   }
 
   !groupBlipTooltipText &&
@@ -218,7 +285,10 @@ function renderQuadrantTables(quadrants, rings) {
         .append('h2')
         .classed('quadrant-table__ring-name', true)
         .attr('data-ring-name', ringName)
-        .text(ringName)
+        .call((header) => {
+          header.append('span').classed('quadrant-table__ring-name-label', true).text(ringName)
+          renderRingTooltip(header, ringName, `${quadrant.order}-${ringName}`)
+        })
       quadrantContainer
         .append('ul')
         .classed('blip-list', true)

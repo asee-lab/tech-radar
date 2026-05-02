@@ -9,9 +9,9 @@ class RadarPage {
     this.quadrantList = '.quadrant-subnav__list-item'
     this.quadrantDropdown = '.quadrant-subnav__dropdown'
     this.quadrantSelector = '.quadrant-subnav__dropdown-selector'
-    this.platformsSubnavItem = '.quadrant-subnav__list-item:nth-child(3)'
-    this.searchBox = '.search-container__input'
-    this.searchResultItems = '.ui-menu-item'
+    this.platformsSubnavItem = '.quadrant-subnav__list-item:nth-child(4)'
+    this.searchBox = '.radar-search-page__input'
+    this.searchResultItems = '.radar-search-page__result'
     this.alternateRadarsItems = '.alternative-radars__list-item'
     this.blipSelectedOld = '.quadrant-table.selected .blip-list-item.highlight'
     this.blipDescriptionOld = '.blip-item-description.expanded p'
@@ -27,6 +27,7 @@ class RadarPage {
     this.subnavList = '.quadrant-subnav__list'
     this.radarGraphSvg = 'svg#radar-plot'
     this.mobileQuadrants = '.all-quadrants-mobile'
+    this.searchPage = '.radar-search-page'
     this.tooltip = '.d3-tip'
     this.quadrantTableBlip = function (blipId) {
       return `.quadrant-table.selected .blip-list__item-container[data-blip-id="${blipId}"]`
@@ -47,7 +48,7 @@ class RadarPage {
       return `#${quadrantOrder}-quadrant-mobile`
     }
     this.searchResultByIndex = function (index) {
-      return `.ui-menu-item:nth-child(${index})`
+      return `.radar-search-page__result:nth-child(${index}) .radar-search-page__result-link`
     }
     this.alternateRadarsItemByIndex = function (index) {
       return `.alternative-radars__list-item:nth-child(${index})`
@@ -98,6 +99,18 @@ class RadarPage {
     cy.get(this.subnavDropdown).click()
   }
 
+  clickSearchTab() {
+    cy.get(this.subnavQuadrant('search')).click()
+  }
+
+  openSearchPage() {
+    cy.get('body').then(($body) => {
+      if ($body.find(`${this.searchPage}:visible`).length === 0 && $body.find(this.subnavQuadrant('search')).length) {
+        cy.get(this.subnavQuadrant('search')).click()
+      }
+    })
+  }
+
   clickSearchResult(index) {
     cy.get(this.searchResultByIndex(index)).click()
   }
@@ -112,6 +125,7 @@ class RadarPage {
   }
 
   triggerSearch(query) {
+    this.openSearchPage()
     cy.get(this.searchBox).clear()
     cy.get(this.searchBox).type(query)
   }
@@ -121,6 +135,7 @@ class RadarPage {
   }
 
   typeStringInSearch(string) {
+    this.openSearchPage()
     cy.get(this.searchBox).clear()
     cy.get(this.searchBox).type(string)
   }
@@ -162,28 +177,33 @@ class RadarPage {
   }
 
   validateQuadrantNames() {
-    cy.get(this.quadrantList).should('have.length', 5)
+    cy.get(this.quadrantList).should('have.length', 6)
+    cy.get(`${this.quadrantList}:nth-child(1)`).should('have.text', 'Search')
 
     let i = 1
     for (const quadrant of config.QUADRANT_NAMES) {
-      cy.get(`${this.quadrantList}:nth-child(${i})`).should('have.text', quadrant)
+      cy.get(`${this.quadrantList}:nth-child(${i + 1})`).should('have.text', quadrant)
       i++
     }
   }
 
   validateQuadrantNamesForPublicGoogleSheet() {
-    cy.get(this.quadrantList).should('have.length', 5)
+    cy.get(this.quadrantList).should('have.length', 6)
+    cy.get(`${this.quadrantList}:nth-child(1)`).should('have.text', 'Search')
 
     let i = 1
     for (const quadrant of config.QUADRANT_NAMES) {
-      cy.get(`${this.quadrantList}:nth-child(${i})`).should('have.text', quadrant)
+      cy.get(`${this.quadrantList}:nth-child(${i + 1})`).should('have.text', quadrant)
       i++
     }
   }
 
-  validateSearchResults(query, results) {
+  validateSearchResults(query, _results) {
+    cy.get(this.searchPage).should('be.visible')
     this.triggerSearch(query)
-    cy.get(this.searchResultItems).should('have.length', results)
+    cy.get('.radar-search-page__result').should('have.length.greaterThan', 0)
+    cy.get('.radar-search-page__result').should('have.length.lte', 10)
+    cy.get('.radar-search-page__result-count').should('contain', 'Showing')
   }
 
   validateAlternateRadarsForPublicGoogleSheet() {
@@ -297,6 +317,7 @@ class RadarPage {
   }
 
   validateSearchVisible() {
+    this.openSearchPage()
     cy.get(this.searchBox).should('be.visible')
   }
 

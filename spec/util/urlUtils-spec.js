@@ -1,4 +1,11 @@
-const { constructSheetUrl, getDocumentOrSheetId, getSheetName } = require('../../src/util/urlUtils')
+const {
+  constructSheetUrl,
+  getDocumentOrSheetId,
+  getSheetName,
+  constructBlipDetailUrl,
+  constructSearchUrl,
+  isSearchView,
+} = require('../../src/util/urlUtils')
 const queryParams = require('../../src/util/queryParamProcessor')
 
 jest.mock('../../src/util/queryParamProcessor')
@@ -73,5 +80,30 @@ describe('Url Utils', () => {
     const sheetName = getSheetName()
 
     expect(sheetName).toEqual('sheetName')
+  })
+
+  it('constructs blip detail urls without publication version', () => {
+    delete window.location
+    window.location = Object.create(window)
+    window.location.pathname = '/radar'
+
+    expect(constructBlipDetailUrl('testcontainers')).toEqual('/radar?blip=testcontainers')
+  })
+
+  it('detects search view', () => {
+    queryParams.mockReturnValue({ view: 'search' })
+    delete window.location
+    window.location = Object.create(window)
+    window.location.search = '?view=search'
+
+    expect(isSearchView()).toBe(true)
+  })
+
+  it('constructs search view urls with publication version', () => {
+    delete window.location
+    window.location = Object.create(window)
+    window.location.pathname = '/radar'
+
+    expect(constructSearchUrl('2026.04')).toEqual('/radar?view=search&version=2026.04')
   })
 })

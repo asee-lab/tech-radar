@@ -7,7 +7,7 @@ const InputSanitizer = function () {
   var relaxedOptions = {
     allowedTags: ['b', 'i', 'em', 'strong', 'a', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'ul', 'br', 'p', 'u'],
     allowedAttributes: {
-      a: ['href', 'target', 'rel'],
+      a: ['href', 'target', 'rel', 'class', 'aria-label'],
     },
   }
 
@@ -36,6 +36,7 @@ const InputSanitizer = function () {
     blip.status = sanitizeHtml(blip.status, restrictedOptions)
     blip.ring = sanitizeHtml(blip.ring, restrictedOptions)
     blip.quadrant = sanitizeHtml(blip.quadrant, restrictedOptions)
+    blip.slug = sanitizeHtml(blip.slug || '', restrictedOptions)
 
     return blip
   }
@@ -49,6 +50,7 @@ const InputSanitizer = function () {
     const statusIndex = header.indexOf('status')
     const quadrantIndex = header.indexOf('quadrant')
     const ringIndex = header.indexOf('ring')
+    const slugIndex = header.indexOf('slug')
 
     const description = descriptionIndex === -1 ? '' : blip[descriptionIndex]
     const name = nameIndex === -1 ? '' : blip[nameIndex]
@@ -56,6 +58,7 @@ const InputSanitizer = function () {
     const status = statusIndex === -1 ? '' : blip[statusIndex]
     const ring = ringIndex === -1 ? '' : blip[ringIndex]
     const quadrant = quadrantIndex === -1 ? '' : blip[quadrantIndex]
+    const slug = slugIndex === -1 ? '' : blip[slugIndex]
 
     blip.description = sanitizeHtml(description, relaxedOptions)
     blip.name = sanitizeHtml(name, restrictedOptions)
@@ -63,6 +66,7 @@ const InputSanitizer = function () {
     blip.status = sanitizeHtml(status, restrictedOptions)
     blip.ring = sanitizeHtml(ring, restrictedOptions)
     blip.quadrant = sanitizeHtml(quadrant, restrictedOptions)
+    blip.slug = sanitizeHtml(slug, restrictedOptions)
 
     return blip
   }

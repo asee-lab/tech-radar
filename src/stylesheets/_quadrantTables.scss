@@ -12,9 +12,18 @@
 
     &__ring-name {
       text-transform: none;
-      margin: 0;
+      margin: 0 0 12px;
       scroll-margin-top: $subnavHeight;
       font-family: $baseFontFamily;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+
+    &__ring-name-label {
+      display: inline-flex;
     }
 
     @include media-query-xlarge {
@@ -46,6 +55,9 @@
       }
 
       &-container {
+        border-bottom: 1px solid $mist-s20;
+        padding-bottom: 20px;
+
         &.expand {
           background-color: $mist;
         }
@@ -58,15 +70,15 @@
         }
 
         &.expand &__description {
-          display: block;
+          display: -webkit-box;
+          -webkit-line-clamp: unset;
         }
 
         &__name {
-          padding: 20px;
+          padding: 20px 20px 16px;
           width: 100%;
           border: none;
           background-color: transparent;
-          border-bottom: 1px solid $mist-s20;
           text-align: unset;
           display: flex;
           justify-content: space-between;
@@ -82,11 +94,14 @@
             pointer-events: none;
             display: inline-block;
             width: 90%;
-            font-size: 1rem;
-            font-family: $baseFontFamily;
+            font-family: 'Bitter', $baseFontFamily;
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.25;
+            color: $black;
 
             @include media-query-large {
-              font-size: 1.125rem;
+              font-size: 1.25rem;
             }
           }
 
@@ -103,11 +118,14 @@
         }
 
         &__description {
-          display: none;
-          padding: 20px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 4;
+          overflow: hidden;
+          padding: 0 20px;
           font-size: 1rem;
           font-family: $baseFontFamily;
-          line-height: 36px;
+          line-height: 1.75;
 
           @include media-query-large {
             font-size: 1.125rem;
@@ -117,10 +135,198 @@
             font-family: inherit !important;
             font-size: inherit !important;
             line-height: inherit !important;
-            margin: 0 !important;
+            margin: 0 0 1em !important;
+          }
+
+          a {
+            color: $link-normal;
+            font-weight: inherit;
+            text-underline-offset: 0.12em;
+            text-decoration-thickness: 1px;
+
+            &:hover {
+              color: $link-hover;
+            }
+          }
+
+          a.pop-out {
+            display: inline;
+          }
+
+          a.pop-out::after {
+            content: '';
+            display: inline-block;
+            width: 0.8em;
+            height: 0.8em;
+            margin-left: 0.3em;
+            vertical-align: -0.05em;
+            background: url('/images/popout.svg') no-repeat center / contain;
           }
         }
       }
     }
   }
+
+  .read-more-btn {
+    margin: 12px 20px 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: $link-normal;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  .cmp-blip-history {
+    padding: 16px 20px 0;
+  }
+
+  .cmp__link-with-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: $black;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+
+  .cta-arrow {
+    width: 8px;
+    height: 8px;
+    display: inline-flex;
+    rotate: -45deg;
+    border: 1px solid currentColor;
+    border-width: 0 2px 2px 0;
+  }
+
+  .related-blips-container {
+    padding: 16px 20px 0;
+  }
+
+  .related-blips-heading {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .related-blips-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .related-blip-item {
+    position: relative;
+  }
+
+  .related-blip-item__href {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid $mist-s30;
+    border-radius: 999px;
+    text-decoration: none;
+    background: $white;
+    color: $black;
+
+    &:hover {
+      border-color: $wave;
+      color: $black;
+    }
+  }
+
+  .blip-name {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .blip-ring {
+    font-size: 0.75rem;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: $wave;
+  }
+
+  .blip-hover-info {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 0;
+    min-width: 180px;
+    padding: 10px 12px;
+    background: $wave;
+    color: $white;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    z-index: 12;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  }
+
+  .related-blip-item:hover .blip-hover-info,
+  .related-blip-item:focus-within .blip-hover-info {
+    display: block;
+  }
+
+  .blip-icon {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: $white;
+  }
+
+  .blip-volume {
+    margin-top: 6px;
+    font-weight: 700;
+  }
+}
+
+.ring-tooltip--help {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: help;
+}
+
+.ring-tooltip--icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  overflow: visible;
+}
+
+.ring-tooltip--text {
+  display: none;
+  position: absolute;
+  margin-top: 36px;
+  margin-left: -24px;
+  max-width: 280px;
+  padding: 10px 12px;
+  background: $wave;
+  color: $white;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.ring-tooltip--help:hover + .ring-tooltip--text {
+  display: block;
 }

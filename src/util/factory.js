@@ -21,9 +21,10 @@ const ExceptionMessages = require('./exceptionMessages')
 const GoogleAuth = require('./googleAuth')
 const config = require('../config')
 const featureToggles = config().featureToggles
-const { getDocumentOrSheetId, getSheetName, getVersion, getBlipParam, constructVersionUrl } = require('./urlUtils')
+const { getDocumentOrSheetId, getSheetName, getVersion, getBlipParam, isSearchView } = require('./urlUtils')
 const appState = require('./appState')
 const { renderBlipDetail, showRadarView } = require('../graphing/blipDetail')
+const { showSearchPage } = require('../graphing/components/searchPage')
 const { getGraphSize, graphConfig, isValidConfig } = require('../graphing/config')
 const InvalidConfigError = require('../exceptions/invalidConfigError')
 const InvalidContentError = require('../exceptions/invalidContentError')
@@ -62,6 +63,7 @@ const plotRadar = function (title, blips, currentRadarName, alternativeRadars) {
         blip.status,
         blip.topic,
         blip.description,
+        blip.slug,
       ),
     )
   })
@@ -146,6 +148,7 @@ const plotRadarGraph = function (title, blips, currentRadarName, alternativeRada
         blip.status,
         blip.topic,
         blip.description,
+        blip.slug,
       )
       quadrants[currentQuadrant].add(blipObj)
     }
@@ -332,9 +335,7 @@ const ManifestDocument = function (manifestUrl) {
         }
         const baseDir = manifestUrl.replace(/[^/]*$/, '')
         return Promise.all(
-          manifest.versions.map((v) =>
-            d3.csv(baseDir + v.file).then((rows) => ({ version: v, rows })),
-          ),
+          manifest.versions.map((v) => d3.csv(baseDir + v.file).then((rows) => ({ version: v, rows }))),
         ).then((loaded) => ({ manifest, loaded }))
       })
       .then(({ manifest, loaded }) => {
@@ -383,15 +384,23 @@ const ManifestDocument = function (manifestUrl) {
           entry.blips.forEach((blip) => {
             const key = blip.name.toLowerCase()
             if (!blipHistory.has(key)) blipHistory.set(key, [])
-            blipHistory.get(key).push({
+            const historyEntry = {
               versionId: id,
+              versionLabel: entry.label || entry.id,
+              versionDate: entry.date,
               name: blip.name,
+              slug: blip.slug || '',
               ring: (blip.ring || '').toLowerCase(),
               quadrant: blip.quadrant,
               description: blip.description,
               status: blip.status,
               isNew: (blip.isNew || '').toLowerCase() === 'true',
-            })
+            }
+            blipHistory.get(key).push(historyEntry)
+            if (historyEntry.slug) {
+              const slugKey = historyEntry.slug.toLowerCase()
+              if (!blipHistory.has(slugKey)) blipHistory.set(slugKey, blipHistory.get(key))
+            }
           })
         })
 
@@ -400,18 +409,33 @@ const ManifestDocument = function (manifestUrl) {
 
         const blipParam = getBlipParam()
         if (blipParam) {
+          renderRadarForVersion(currentVersionId, manifest)
           renderBlipDetail(blipParam, currentVersionId)
         } else {
           renderRadarForVersion(currentVersionId, manifest)
         }
 
-        window.addEventListener('popstate', () => {
+        window.addEventListener('popstate', (event) => {
           const vid = getVersion() || manifest.current || orderedIds[0]
           const bp = getBlipParam()
           const previousVid = appState.getCurrentVersionId()
           if (bp) {
-            appState.setCurrentVersionId(vid)
-            renderBlipDetail(bp, vid)
+            const detailContextVersion = event.state?.versionId || vid
+            appState.setCurrentVersionId(detailContextVersion)
+            renderBlipDetail(bp, detailContextVersion)
+          } else if (isSearchView()) {
+            const currentlyShowingDetail = document.querySelector('main .blip-detail')
+            if (currentlyShowingDetail) {
+              showRadarView()
+            }
+            if (vid !== previousVid || !document.querySelector('svg#radar-plot')) {
+              d3.select('#radar').selectAll('*').remove()
+              d3.select('main .graph-header').selectAll('*').remove()
+              d3.select('main .graph-footer').selectAll('*').remove()
+              d3.select('.quadrant-table__container').remove()
+              renderRadarForVersion(vid, manifest)
+            }
+            showSearchPage(false)
           } else {
             const currentlyShowingDetail = document.querySelector('main .blip-detail')
             if (currentlyShowingDetail) {
@@ -485,7 +509,9 @@ const Factory = function () {
     window.addEventListener('keydown', function (e) {
       if (featureToggles.UIRefresh2022 && e.key === '/') {
         const inputElement =
-          d3.select('input.search-container__input').node() || d3.select('.input-sheet-form input').node()
+          d3.select('input.radar-search-page__input').node() ||
+          d3.select('input.search-container__input').node() ||
+          d3.select('.input-sheet-form input').node()
 
         if (document.activeElement !== inputElement) {
           e.preventDefault()

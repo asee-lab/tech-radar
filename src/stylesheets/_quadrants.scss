@@ -321,6 +321,8 @@
       transition: opacity 0.3s ease-out;
 
       &.selected {
+        max-height: none;
+        overflow: visible;
         opacity: 1;
         transition: opacity 1s ease;
 
@@ -394,16 +396,82 @@
       }
 
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 16px;
       margin: $quadrantsGap auto;
       width: 100%;
       position: absolute;
       top: calc($quadrantWidth * 2 + $quadrantsGap);
     }
 
-    img:nth-child(n + 2) {
-      margin-left: 24px;
+    &__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(100%, 720px);
+    }
+
+    &__status {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    &__status-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    &__print-button {
+      flex: 0 0 auto;
+      border: none;
+      background-color: $wave;
+      color: $white;
+      cursor: pointer;
+      font-size: 0.95rem;
+      height: 40px;
+      padding: 0 18px;
+    }
+
+    &__ring-guide {
+      display: grid;
+      gap: 12px;
+      width: min(100%, 720px);
+      margin: 0;
+    }
+
+    &__ring-guide-item {
+      display: grid;
+      grid-template-columns: minmax(110px, 140px) 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    &__ring-guide-term {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    &__ring-guide-desc {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: $black;
+    }
+
+    img {
+      margin: 0 !important;
     }
   }
 

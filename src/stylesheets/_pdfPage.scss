@@ -100,6 +100,8 @@
   #radar {
     display: block !important;
     height: max-content !important;
+    font-size: 11pt;
+    line-height: 1.45;
 
     &.no-blips .quadrant-table {
       display: block !important;
@@ -111,12 +113,16 @@
 
     a {
       color: black;
+      overflow-wrap: break-word;
     }
 
     a:after {
-      content: ' <' attr(href) '> ';
-      font-weight: normal;
-      color: black;
+      content: none !important;
+    }
+
+    a.pop-out:after {
+      display: none !important;
+      content: none !important;
     }
   }
 
@@ -166,6 +172,7 @@
 
       .blip-list__item-container {
         background-color: white !important;
+        margin-bottom: 20px;
 
         &__name {
           border-bottom: none;
@@ -183,7 +190,20 @@
 
         &__description {
           display: block;
+          overflow: visible !important;
+          max-height: none !important;
+          -webkit-line-clamp: unset !important;
         }
+      }
+
+      .read-more-btn,
+      .cmp-blip-history {
+        display: none !important;
+      }
+
+      .related-blips-container {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       ul.blip-list {

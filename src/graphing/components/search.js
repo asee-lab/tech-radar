@@ -18,13 +18,13 @@ function renderSearch(radarHeader, quadrants) {
 
     if (appState.isManifestMode() && item.versionId) {
       const { navigateToBlipDetail } = require('../blipDetail')
-      navigateToBlipDetail(item.blipName, item.versionId)
+      navigateToBlipDetail(item.slug || item.blipName, item.versionId)
       return
     }
 
     if (appState.isManifestMode() && item.blip) {
       const { navigateToBlipDetail } = require('../blipDetail')
-      navigateToBlipDetail(item.blip.name(), appState.getCurrentVersionId())
+      navigateToBlipDetail(item.blip.slug() || item.blip.name(), appState.getCurrentVersionId())
       return
     }
 
