@@ -1,4 +1,5 @@
 const {
+  buildCrossVersionSource,
   filterAndRank,
   getFilterOptions,
   getItemQuadrantName,
@@ -6,6 +7,7 @@ const {
   paginate,
   sortRecentFirst,
 } = require('../../src/util/searchData')
+const appState = require('../../src/util/appState')
 
 describe('searchData', () => {
   const source = [
@@ -28,6 +30,10 @@ describe('searchData', () => {
       description: 'BPMN process automation',
     },
   ]
+
+  afterEach(() => {
+    appState.setManifestData({ manifest: null, versions: null, blipHistory: null, currentVersionId: null })
+  })
 
   it('filters by query text and ranks prefix matches first', () => {
     expect(filterAndRank(source, 'a', null).map((item) => item.value)).toEqual(['ASEE Flow', 'Kafka', 'React'])
@@ -84,5 +90,33 @@ describe('searchData', () => {
       { value: 'trial', label: 'Trial', count: 1 },
       { value: 'hold', label: 'Hold', count: 1 },
     ])
+  })
+
+  it('builds one cross-version search item for name and slug aliases', () => {
+    const reactHistory = [
+      {
+        versionId: '2026.04',
+        versionLabel: 'April 2026',
+        versionDate: '2026-04-01',
+        name: 'React JS',
+        slug: 'reactjs',
+        quadrant: 'Frameworks and libraries',
+        ring: 'adopt',
+        description: 'UI library',
+      },
+    ]
+    const history = new Map([
+      ['react js', reactHistory],
+      ['reactjs', reactHistory],
+    ])
+
+    appState.setManifestData({
+      manifest: { current: '2026.04', versions: [{ id: '2026.04', label: 'April 2026' }] },
+      versions: new Map(),
+      blipHistory: history,
+      currentVersionId: '2026.04',
+    })
+
+    expect(buildCrossVersionSource([]).map((item) => item.value)).toEqual(['React JS'])
   })
 })
