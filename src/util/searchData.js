@@ -75,8 +75,12 @@ function buildCrossVersionSource(currentQuadrants) {
 
   const source = []
   let sourceOrder = 0
+  const seenHistories = new Set()
 
   history.forEach((entries) => {
+    if (!entries || !entries.length || seenHistories.has(entries)) return
+    seenHistories.add(entries)
+
     const newest = entries[0]
     source.push({
       blipName: newest.name,
