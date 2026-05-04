@@ -83,7 +83,10 @@ function renderResultCount(resultsContainer, pageInfo, query) {
 function renderPagination(resultsContainer, pageInfo, onPageChange) {
   if (pageInfo.totalPages <= 1) return
 
-  const pagination = resultsContainer.append('nav').classed('radar-search-page__pagination', true).attr('aria-label', 'Search results pages')
+  const pagination = resultsContainer
+    .append('nav')
+    .classed('radar-search-page__pagination', true)
+    .attr('aria-label', 'Search results pages')
 
   pagination
     .append('button')
@@ -131,14 +134,17 @@ function renderResults(resultsContainer, results, query, page, onPageChange) {
     const result = list.append('li').classed('radar-search-page__result', true)
     const button = result.append('button').classed('radar-search-page__result-link', true).attr('type', 'button')
 
-    button
-      .append('h3')
-      .classed('radar-search-page__result-title', true)
-      .text(getItemName(item))
+    button.append('h3').classed('radar-search-page__result-title', true).text(getItemName(item))
 
     const meta = button.append('span').classed('radar-search-page__result-meta', true)
-    meta.append('span').classed('radar-search-page__result-version', true).text(item.versionLabel || item.versionId || '')
-    meta.append('span').classed('radar-search-page__result-ring-marker', true).text(formatRingName(getItemRingName(item)))
+    meta
+      .append('span')
+      .classed('radar-search-page__result-version', true)
+      .text(item.versionLabel || item.versionId || '')
+    meta
+      .append('span')
+      .classed('radar-search-page__result-ring-marker', true)
+      .text(formatRingName(getItemRingName(item)))
     meta.append('span').classed('radar-search-page__result-quadrant-marker', true).text(getItemQuadrantName(item))
     if (item.nonCurrent) {
       meta.append('span').classed('radar-search-page__result-old-blip', true).text('Old Blip')
@@ -205,11 +211,16 @@ function updateSearchResults(source, page = 1) {
   const query = input ? input.value.trim() : ''
   updateFilterCounts(source, query)
   const results = filterAndRank(source, query, getFilters())
-  renderResults(d3.select('.radar-search-page__results'), results, query, page, (nextPage) => updateSearchResults(source, nextPage))
+  renderResults(d3.select('.radar-search-page__results'), results, query, page, (nextPage) =>
+    updateSearchResults(source, nextPage),
+  )
 }
 
 function setSearchTabActive(active) {
-  d3.selectAll('li.quadrant-subnav__list-item').classed('active-item', false).select('button').attr('aria-selected', null)
+  d3.selectAll('li.quadrant-subnav__list-item')
+    .classed('active-item', false)
+    .select('button')
+    .attr('aria-selected', null)
   if (active) {
     d3.select('#subnav-item-search').classed('active-item', true).select('button').attr('aria-selected', 'true')
     d3.select('span.quadrant-subnav__dropdown-selector').text('Search')

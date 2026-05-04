@@ -28,6 +28,28 @@
     margin-top: 32px;
   }
 
+  &__not-current {
+    padding: 24px;
+    border-left: 4px solid #163c4d;
+    background: #f4f7f8;
+    color: #1f1f1f;
+
+    h2 {
+      margin: 0 0 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #163c4d;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+
   .cmp-blip-timeline {
     &__date {
       font-size: 0.875rem;

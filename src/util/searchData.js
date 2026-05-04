@@ -70,7 +70,8 @@ function buildCurrentRadarSource(quadrants) {
 
 function buildCrossVersionSource(currentQuadrants) {
   const history = appState.getBlipHistory()
-  const currentVersionId = appState.getCurrentVersionId()
+  const manifest = appState.getManifest()
+  const manifestCurrentVersionId = manifest && manifest.current
   if (!history) return buildCurrentRadarSource(currentQuadrants)
 
   const source = []
@@ -93,7 +94,7 @@ function buildCrossVersionSource(currentQuadrants) {
       slug: newest.slug || '',
       sourceOrder: sourceOrder++,
       value: newest.name,
-      nonCurrent: newest.versionId !== currentVersionId,
+      nonCurrent: Boolean(manifestCurrentVersionId && newest.versionId !== manifestCurrentVersionId),
     })
   })
 

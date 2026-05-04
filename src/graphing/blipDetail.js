@@ -43,7 +43,17 @@ function formatPublishedDate(dateString, fallback) {
     month: 'short',
     day: '2-digit',
     year: 'numeric',
+    timeZone: 'UTC',
   }).format(date)
+}
+
+function formatEditionLastUpdatedDate(dateString, fallback) {
+  if (!dateString) return fallback
+  const date = new Date(dateString)
+  if (Number.isNaN(date.getTime())) return fallback
+
+  const lastDayOfEditionMonth = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0))
+  return formatPublishedDate(lastDayOfEditionMonth.toISOString(), fallback)
 }
 
 function scrollToTop() {
@@ -69,6 +79,22 @@ function renderTimelineEntry(wrapper, entry, index) {
   const description = item.append('div').classed('cmp-blip-timeline__item--lead blip-timeline-description', true).node()
   description.innerHTML = entry.description || ''
   enrichDescriptionLinks(description, [], entry.versionId)
+}
+
+function isBlipOnCurrentEdition(entries) {
+  const manifest = appState.getManifest()
+  const currentVersionId = (manifest && manifest.current) || appState.getCurrentVersionId()
+  return !currentVersionId || entries.some((entry) => entry.versionId === currentVersionId)
+}
+
+function renderNotOnCurrentEditionNotice(wrapper) {
+  const notice = wrapper.append('aside').classed('blip-detail__not-current', true)
+  notice.append('h2').text('NOT ON THE CURRENT EDITION')
+  notice
+    .append('p')
+    .text(
+      'This blip is not on the current edition of the Radar. If it was on one of the last few editions, it is likely that it is still relevant. If the blip is older, it might no longer be relevant and our assessment might be different today. Unfortunately, we simply do not have the bandwidth to continuously review blips from previous editions of the Radar.',
+    )
 }
 
 function renderBlipDetail(blipIdentifier, versionId) {
@@ -110,13 +136,16 @@ function renderBlipDetail(blipIdentifier, versionId) {
     .classed('cmp-blip-timeline__date--lastmodified', true)
     .append('span')
     .text(
-      `Last updated : ${formatPublishedDate(
+      `Last updated : ${formatEditionLastUpdatedDate(
         newestEntry.versionDate,
         newestEntry.versionLabel || newestEntry.versionId,
       )}`,
     )
 
   const wrapper = timelineRoot.append('div').classed('cmp-blip-timeline__wrapper blip-timeline-wrapper', true)
+  if (!isBlipOnCurrentEdition(entries)) {
+    renderNotOnCurrentEditionNotice(wrapper)
+  }
   entries.forEach((entry, index) => renderTimelineEntry(wrapper, entry, index))
 
   const dateBottom = timelineRoot.append('div').classed('cmp-blip-timeline__date', true)

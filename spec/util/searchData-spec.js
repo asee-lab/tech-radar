@@ -119,4 +119,81 @@ describe('searchData', () => {
 
     expect(buildCrossVersionSource([]).map((item) => item.value)).toEqual(['React JS'])
   })
+
+  it('uses the newest entry regardless of selected radar version', () => {
+    const sqlServerHistory = [
+      {
+        versionId: '2026.04',
+        versionLabel: 'April 2026',
+        versionDate: '2026-04-01',
+        name: 'Microsoft SQL Server',
+        slug: 'sql-server',
+        quadrant: 'Runtime Infrastructure',
+        ring: 'adopt',
+        description: 'SQL Server 2025 update',
+      },
+      {
+        versionId: '2025.10',
+        versionLabel: 'October 2025',
+        versionDate: '2025-10-01',
+        name: 'Microsoft SQL Server',
+        slug: 'sql-server',
+        quadrant: 'Runtime Infrastructure',
+        ring: 'adopt',
+        description: 'Original SQL Server entry',
+      },
+    ]
+
+    appState.setManifestData({
+      manifest: {
+        current: '2026.04',
+        versions: [
+          { id: '2026.04', label: 'April 2026' },
+          { id: '2025.10', label: 'October 2025' },
+        ],
+      },
+      versions: new Map(),
+      blipHistory: new Map([['microsoft sql server', sqlServerHistory]]),
+      currentVersionId: '2025.10',
+    })
+
+    const [item] = buildCrossVersionSource([])
+
+    expect(item.versionId).toBe('2026.04')
+    expect(item.description).toBe('SQL Server 2025 update')
+    expect(item.nonCurrent).toBe(false)
+  })
+
+  it('marks search results old only when absent from the manifest current radar', () => {
+    const oldOnlyHistory = [
+      {
+        versionId: '2025.10',
+        versionLabel: 'October 2025',
+        versionDate: '2025-10-01',
+        name: 'Retired Tool',
+        slug: 'retired-tool',
+        quadrant: 'Tools',
+        ring: 'assess',
+        description: 'No longer on the latest radar',
+      },
+    ]
+
+    appState.setManifestData({
+      manifest: {
+        current: '2026.04',
+        versions: [
+          { id: '2026.04', label: 'April 2026' },
+          { id: '2025.10', label: 'October 2025' },
+        ],
+      },
+      versions: new Map(),
+      blipHistory: new Map([['retired tool', oldOnlyHistory]]),
+      currentVersionId: '2026.04',
+    })
+
+    const [item] = buildCrossVersionSource([])
+
+    expect(item.versionId).toBe('2025.10')
+    expect(item.nonCurrent).toBe(true)
+  })
 })
